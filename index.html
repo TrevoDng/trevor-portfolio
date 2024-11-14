@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    
+  </title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin>
+    </script>
+    
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
+    
+    <style>
+        #profileImage {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50px;
+        }
+        .profileContainer{
+            position: relative;
+            display: flex;
+        }
+        
+        .profileContainer img {
+            margin: 10px;
+        }
+        
+        .profileContainer p {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+        }
+        
+        .profileContainer button {
+            position: absolute;
+            right: 5px;
+            bottom: 10px;
+            color: white;
+            background: blue;
+            border: none;
+            height: 50px;
+            border-radius: 5px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div id="root"></div> 
+    
+    <script>
+        
+        
+    </script>  
+<script type="text/babel">
+
+//import react
+const {useState, useEffect} = React;
+
+
+const App=()=> {
+ const [pageState, setPageState] = useState(0);
+ 
+ const nextPage=()=> {
+     setPageState(()=> pageState + 1);
+ };
+ 
+ const previousPage=()=> {
+     setPageState(()=> pageState - 1);
+ };
+ 
+ const homePage=()=> {
+     setPageState(0);
+ };
+ 
+ //pages Compontents
+ 
+ //Home
+ const Home=()=> {
+ 
+    return (
+        <div style={{textAlign: "left", display: "flex"}}>
+        <div style={{textAlign: "center", flex: "1"}}>
+        <h3>Home page</h3>
+        <br />
+        <div className="profileContainer" style={{flex: "1"}}>
+        <img id="profileImage" src="https://firebasestorage.googleapis.com/v0/b/courses-store-e649d.appspot.com/o/DSALGORITHM_1660719330.webp?alt=media&token=b4266f1a-ce15-4c63-8fce-ace357d409e5" />
+        <p>Trevor Netshisaulu</p>
+        <button style={{margin: "5px"}} onClick={()=>nextPage()}>Take a Ride</button>
+        </div>
+        </div>
+        </div>
+    )
+}
+
+//Drivers List
+const DriversList=()=> {
+ 
+    return (
+          <div style={{textAlign: "left", display: "flex"}}>
+          <button onClick={()=> previousPage()}>{"<"}</button>
+        <div style={{textAlign: "center", flex: "1"}}>
+        <h3>DriversList page</h3>
+        <br />
+        <div className="profileContainer" style={{flex: "1"}}>
+        <img id="profileImage" src="https://firebasestorage.googleapis.com/v0/b/courses-store-e649d.appspot.com/o/DSALGORITHM_1660719330.webp?alt=media&token=b4266f1a-ce15-4c63-8fce-ace357d409e5" />
+        <p>Toyota</p>
+        <button style={{margin: "5px"}} onClick={()=>nextPage()}>Choose a ride</button>
+        </div>
+        </div>
+        </div>
+    )
+}
+
+//Choose Destination
+const ChooseDestination=()=> {
+ 
+    return (
+          <div style={{textAlign: "left", display: "flex"}}>
+          <button onClick={()=> previousPage()}>{"<"}</button>
+        <div style={{textAlign: "center", flex: "1"}}>
+        <h3>ChooseDestination page</h3>
+        <br />
+        <div className="profileContainer" style={{flex: "1"}}>
+        <img id="profileImage" src="https://firebasestorage.googleapis.com/v0/b/courses-store-e649d.appspot.com/o/DSALGORITHM_1660719330.webp?alt=media&token=b4266f1a-ce15-4c63-8fce-ace357d409e5" />
+        <p>Destination</p>
+        <button style={{margin: "5px"}} onClick={()=>nextPage()}>Confirm Destination</button>
+        </div>
+        </div>
+        </div>
+    )
+}
+
+//ConfirmFinalPage
+const ConfirmFinalPage=()=> {
+ 
+    return (
+          <div style={{textAlign: "left", display: "flex"}}>
+          <button onClick={()=> previousPage()}>{"<"}</button>
+        <div style={{textAlign: "center", flex: "1"}}>
+        <h3>confirm price page</h3>
+        <br />
+        <div className="profileContainer" style={{flex: "1"}}>
+        <img id="profileImage" src="https://firebasestorage.googleapis.com/v0/b/courses-store-e649d.appspot.com/o/DSALGORITHM_1660719330.webp?alt=media&token=b4266f1a-ce15-4c63-8fce-ace357d409e5" />
+        <p>R150.00</p>
+        <button style={{margin: "5px"}} onClick={()=>homePage()}>Confirm Trip</button>
+        </div>
+        </div>
+        </div>
+    )
+}
+ 
+ //end of pages Components
+    return (
+        <div style={{textAlign: "center"}}>
+        <h3>How to switch page in React</h3>
+        <p>page - {pageState + 1}</p>
+        <br />
+        <h3>Pages below</h3>
+        <div className="pagesContainer">
+            {
+                pageState == 0 ? 
+                
+                    <Home />
+                : null
+            }
+            
+            {
+                pageState == 1 ? 
+                
+                    <DriversList />
+                : null
+            }
+            
+            {
+                pageState == 2 ? 
+                
+                    <ChooseDestination />
+                : null
+            }
+            
+            {
+                pageState == 3 ? 
+                
+                    <ConfirmFinalPage />
+                : null
+            }
+        </div>
+        <button style={{margin: "5px"}} onClick={()=>nextPage()}>Increment</button>
+        </div>
+    )
+}
+
+
+
+ReactDOM.render(
+<App />, document.getElementById('root'));
+
+//___________________________________
+</script>
+  </body>
+</html>
