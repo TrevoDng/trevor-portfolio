@@ -5,10 +5,10 @@
 
 //import { FiMenu, FiX } from 'react-icons/fi';
 
-import "./NavbarStyles.css";
+//import "./NavbarStyles.css";
 //import Logout from '../login/Logout';
 //import Login from '../login/Login';
-
+/*
 //react imports in html
 const { Component } = React;
 const { Link, Outlet, useNavigate } = ReactRouterDOM;
@@ -97,3 +97,4 @@ renderSwitch(holder) {
 
 
 export default Navbar;
+*/
