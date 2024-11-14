@@ -17,6 +17,10 @@
     <script src="https://unpkg.com/react-router-dom@6.4.2/dist/react-router-dom.min.js"></script>
     <script src="https://unpkg.com/react@18.2.0/dist/react.min.js"></script>
     <script src="https://unpkg.com/react-dom@18.2.0/dist/react-dom.min.js"></script>
+
+    <link rel="stylesheet" href="/public/pages/navbar/navbarStyles.css">
+
+    <script src="/public/pages/navbar/navbar.js" type="module" async></script>
     
     <style>
         #profileImage {
@@ -62,6 +66,8 @@
         
     </script>  
 <script type="text/babel">
+
+    import { Navbar } from 'navbar.js';
 
 //import react
 const {useState, useEffect} = React;
