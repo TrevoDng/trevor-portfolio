@@ -9,12 +9,11 @@
 //import Logout from '../login/Logout';
 //import Login from '../login/Login';
 
+//import { getUserById } from "./userAPI.js";
 //react imports in html
 const { Component } = React;
 const { Link, Outlet, useNavigate } = ReactRouterDOM;
 
-
-//import { getUserById } from "./userAPI.js";
 
 class Navbar extends Component {
   state = { clicked: false };
