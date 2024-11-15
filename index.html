@@ -18,17 +18,196 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
     <script src="https://unpkg.com/react-router-dom@6.4.2/dist/react-router-dom.min.js"></script>
 
-    <!--
-    <script src="https://unpkg.com/react@18.2.0/dist/react.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18.2.0/dist/react-dom.min.js"></script>
 
     <link rel="stylesheet" href="/navbarStyles.css">
 
+    <!--
+    <script src="https://unpkg.com/react@18.2.0/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/dist/react-dom.min.js"></script>
+    
     <script src="/navbar.js" type="module" async></script>
     <script src="/navbar.js" type="module" async defer></script>
     -->
 
     <style>
+
+        /* start topnave*/
+        .main-nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*background: #095172;*/
+    background: #fff;
+    padding: 20px 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+#navbar {
+    margin: -10px 0 0 0;
+}
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10px;
+    z-index: 1;
+}
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+.main-nav-bar span {
+    font-size: 0.8rem;
+    color: rgb(255, 255, 255);
+    /*color: #fff;*/
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+.main-nav-bar hr {
+    
+    color: gold;
+    margin: -10px 10px 0px 57px;
+    background-color: #17cf97;
+    opacity: 1;
+   
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight:  600;
+    color: #000000;
+    transition: 0.3s ease-in-out;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    
+    color: #17cf97;
+}
+
+#navbar li a:hover::after,
+#navbar li a.active::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #17cf97;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#mobile {
+    display: none;
+}
+
+#mobile i {
+    color: white;
+}
+
+.author-name {
+    font-size: 12px;
+}
+
+/*start top design*/
+.top-design {
+     position: absolute;
+     top: 100px;
+     right: 10px;
+     color: tomato;
+     max-width: 300px;
+     /*background-color: #0000007c;*/
+     padding: 20px;
+     border: none;
+     border-radius: 10px;
+ }
+ 
+ .top-design h1 {
+     font-size: 1.5vw;
+ }
+ 
+ .top-design p {
+     font-size: 1.2vw;
+     color: #000000;
+ }
+ 
+ .top-design small {
+     font-size: 16px;
+     
+ }
+
+ .top-design-profile {
+     position: absolute;
+     top: 100px;
+     left: 10px;
+ }
+
+ .top-design-profile img {
+    width: 200px;
+    height: 200px;
+    border: none;
+    border-radius: 200px;
+ }
+
+ .top-design-profile h1 {
+     font-size: 1.1vw;
+ }
+ 
+ .top-design-profile p {
+     font-size: 0.8vw;
+     color: #000000;
+ }
+ 
+ .top-design-profile small {
+     font-size: 16px;
+     
+ }
+
+
+ .top-hearder {
+    position: relative;
+    background-color: #ffffff;
+    height: 800px;
+ }
+/*end stop design*/
+
+@media screen and (max-width:769px) {
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 90px;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background: #2a3239;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
+        padding: 40px 0 0 10px;
+        transition: 0.3s ease-in-out;
+    }
+    #navbar.active {
+        right: 0px;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+#mobile {
+    display: block;
+}
+#mobile i{
+    font-size: 24px;
+    cursor: pointer; 
+}
+}
+/*end of topnav*/
+
         #profileImage {
             width: 50px;
             height: 50px;
@@ -61,16 +240,27 @@
             height: 50px;
             border-radius: 5px;
         }
+
+@media screen and (min-width: 1340px) {
+    body {
+        padding: 0 20% 0 20%;
+    }
+
+    .main-web-cover{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
     </style>
   </head>
   <body>
+    <div class="main-web-cover">
     <div id="container"></div>
+  
     <div id="root"></div> 
-    
+</div>  
     <script>
-        
-        
-    </script>  
+    </script>
+
 <script type="text/babel">
 
   //  import { Navbar } from 'navbar.js';
@@ -78,9 +268,9 @@
 //import react
 const {useState, useEffect} = React;
 
-/*
+
 const { Component } = React;
-const { Link, Outlet, useNavigate } = ReactRouterDOM;
+//const { a, Outlet, useNavigate } = ReactRouterDOM;
 
 //start of navbar component
 class Navbar extends Component {
@@ -106,17 +296,10 @@ renderSwitch(holder) {
   render() {
   return(
     
-    <div>
     <nav className='main-nav-bar'>
-    <Link to="/"> 
-    <svg id="logo-15" width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg"> 
-    <path d="M24.5 12.75C24.5 18.9632 19.4632 24 13.25 24H2V12.75C2 6.53679 7.03679 1.5 13.25 1.5C19.4632 1.5 24.5 6.53679 24.5 12.75Z" className="ccustom" fill="white"></path> 
-    <path d="M24.5 35.25C24.5 29.0368 29.5368 24 35.75 24H47V35.25C47 41.4632 41.9632 46.5 35.75 46.5C29.5368 46.5 24.5 41.4632 24.5 35.25Z" className="ccustom" fill="white"></path> 
-    <path d="M2 35.25C2 41.4632 7.03679 46.5 13.25 46.5H24.5V35.25C24.5 29.0368 19.4632 24 13.25 24C7.03679 24 2 29.0368 2 35.25Z" className="ccustom" fill="#17CF97"></path> 
-    <path d="M47 12.75C47 6.53679 41.9632 1.5 35.75 1.5H24.5V12.75C24.5 18.9632 29.5368 24 35.75 24C41.9632 24 47 18.9632 47 12.75Z" className="ccustom" fill="#17CF97"></path> </svg>
-    <span>TEN<span style={{ color: '#17cf97' }}> GLOBAL</span> MONEY</span>
-    <hr style={{ height: '4px' }}></hr>
-    </Link>
+    <a to="/" className="author-name"> 
+    <span>Trevor<span style={{ color: '#17cf97' }}> Elelwani</span> Netshisaulu</span>
+    </a>
   <div className='nav-list'>
     
     <ul id="navbar" 
@@ -124,24 +307,24 @@ renderSwitch(holder) {
       "#navbar active" : "#navbar"}>
       
       <li >
-        <Link to='/homecontent' className='active'>
+        <a to='/homecontent' className='active'>
           Home
-        </Link>
+        </a>
         </li>
       <li>
-      <Link to="/aboutus">About</Link></li>
+      <a to="/aboutus">Services</a></li>
 
       <li>
-      <Link to="/contactus">Contact</Link></li>
+      <a to="/contactus">Studies</a></li>
       
         <li>
-            <Link to="/statement">Statement</Link>
+            <a to="/statement">About</a>
           </li>
           <li>
-        <Link to="/useraccount">Profile</Link>
+        <a to="/useraccount">Hire</a>
         </li>    
         <li>
-        <Link to="/homecontent"></Link>
+        <a to="/homecontent"></a>
         </li>
     </ul>
 
@@ -154,17 +337,45 @@ renderSwitch(holder) {
     className=
     {this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
   </div>
-  </nav>
-    
-      <Outlet />    
-    </div>
+  </nav>  
   
   )
 }
 }
 
+const TopDedsign =() => {
+
+    return (
+        <div>
+            <div class="top-design">
+            <p>Hi there, I am </p>
+         <h1>Web, Mobile & Desktop Application Developer</h1>
+          <p>Explore my programming journey and
+             discover the skills I''ve acquired along the way.
+          </p>
+          <small>- supported by TEN IT Solution© -</small>
+            </div>
+        </div>
+    )
+}
+
+
+const TopDedsignProfile =() => {
+
+return (
+    <div>
+        <div className="top-design-profile">
+      <img src="https://firebasestorage.googleapis.com/v0/b/tenglobal-2a34b.appspot.com/o/computer_and_desk%2Fquery_a_computer_screen_on_top_of_a(2).jpeg?alt=media&token=a3620e52-377f-4a01-ae05-c805c4c929f7" />
+      <p>Hi there, I am </p>
+     <h1>Web, Mobile & Desktop Application Developer</h1>
+      <small>- supported by TEN IT Solution© -</small>
+        </div>
+    </div>
+)
+}
+
 //end of navbar component
-*/
+
 const App=()=> {
  const [pageState, setPageState] = useState(0);
  
@@ -260,6 +471,11 @@ const ConfirmFinalPage=()=> {
  //end of pages Components
     return (
         <div style={{textAlign: "center"}}>
+            <div className="top-hearder">
+            <Navbar />
+            <TopDedsignProfile />
+            <TopDedsign />
+            </div>
         <h3>How to switch page in React</h3>
         <p>page - {pageState + 1}</p>
         <br />

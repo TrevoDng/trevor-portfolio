@@ -14,7 +14,6 @@
 const { Component } = React;
 const { Link, Outlet, useNavigate } = ReactRouterDOM;
 
-
 class Navbar extends Component {
   state = { clicked: false };
 
