@@ -6,6 +6,10 @@
     Trevor Portfolio
   </title>
     
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+  crossorigin="anonymous" 
+  referrerpolicy="no-referrer" />
   <!--
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin>
@@ -17,8 +21,7 @@
 
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
     <script src="https://unpkg.com/react-router-dom@6.4.2/dist/react-router-dom.min.js"></script>
-
-
+   
     <link rel="stylesheet" href="/navbarStyles.css">
 
     <!--
@@ -31,16 +34,58 @@
 
     <style>
 
+        /*end of topnav*/
+
+        #profileImage {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50px;
+        }
+        .profileContainer{
+            position: relative;
+            display: flex;
+        }
+        
+        .profileContainer img {
+            margin: 10px;
+        }
+        
+        .profileContainer p {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+        }
+        
+        .profileContainer button {
+            position: absolute;
+            right: 5px;
+            bottom: 10px;
+            color: white;
+            background: blue;
+            border: none;
+            height: 50px;
+            border-radius: 5px;
+        }
+        /*end of topnav*/
+
+    .top-hearder {
+        position: relative;
+        background-color: #2b425518;
+        height: 400px;
+    }
+
         /* start topnave*/
-        .main-nav-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /*background: #095172;*/
-    background: #fff;
-    padding: 20px 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-}
+    .main-nav-bar {
+            display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /*background: #095172;*/
+        background: #fff;
+        padding: 20px 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    }
 
 #navbar {
     margin: -10px 0 0 0;
@@ -101,7 +146,7 @@
 }
 
 #mobile {
-    display: none;
+    display: block;
 }
 
 #mobile i {
@@ -117,7 +162,7 @@
      position: absolute;
      top: 100px;
      right: 10px;
-     max-width: 300px;
+     max-width: 400px;
      /*background-color: #0000007c;*/
      padding: 20px;
      border: none;
@@ -142,7 +187,7 @@
  .top-design-profile {
      position: absolute;
      top: 100px;
-     left: 10px;
+     left: 20px;
  }
 
  .top-design-profile img {
@@ -152,8 +197,8 @@
     border-radius: 200px;
  }
 
- .top-design-profile h1 {
-     font-size: 1.1vw;
+ .top-design-profile h2 {
+     font-size: 0.9vw;
      color: tomato;
  }
  
@@ -163,19 +208,48 @@
  }
  
  .top-design-profile small {
-     font-size: 16px;
-     
+     font-size: 12px;
+     padding: 20px;
  }
 
+ #mobile {
 
- .top-hearder {
-    position: relative;
-    background-color: #ffffff;
-    height: 800px;
+ }
+
+ #mobile i{
+    color: #000000;
  }
 /*end stop design*/
 
+.welcome-section {
+    padding: 5px 50px 5px 50px;
+    background-color:#c6c6c79f;
+}
+
+.language-section {
+    background-color: #e0e0e036;
+}
+@media screen and (min-width:769px) {
+    .welcome-section {
+    padding: 50px 200px 50px 200px;
+    }
+    .language-section {
+        padding: 50px 5px 50px 5px;
+    }
+    .language-content-cover {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .language-content-cover {
+
+    }
+}
 @media screen and (max-width:769px) {
+    .top-hearder {
+        display: flex;
+        flex-direction: column;
+    }
     #navbar {
         display: flex;
         flex-direction: column;
@@ -207,40 +281,6 @@
     cursor: pointer; 
 }
 }
-/*end of topnav*/
-
-        #profileImage {
-            width: 50px;
-            height: 50px;
-            border: none;
-            border-radius: 50px;
-        }
-        .profileContainer{
-            position: relative;
-            display: flex;
-        }
-        
-        .profileContainer img {
-            margin: 10px;
-        }
-        
-        .profileContainer p {
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-        }
-        
-        .profileContainer button {
-            position: absolute;
-            right: 5px;
-            bottom: 10px;
-            color: white;
-            background: blue;
-            border: none;
-            height: 50px;
-            border-radius: 5px;
-        }
 
 @media screen and (min-width: 1340px) {
     body {
@@ -267,7 +307,7 @@
   //  import { Navbar } from 'navbar.js';
 
 //import react
-const {useState, useEffect} = React;
+const {useState, useEffect, useRef} = React;
 
 
 const { Component } = React;
@@ -299,14 +339,13 @@ renderSwitch(holder) {
     
     <nav className='main-nav-bar'>
     <a to="/" className="author-name"> 
-    <span>Trevor<span style={{ color: 'tomato' }}> Elelwani</span> Netshisaulu</span>
+    <span>T.E NETSHISAULU</span>
     </a>
+
   <div className='nav-list'>
-    
     <ul id="navbar" 
     className={this.state.clicked ? 
       "#navbar active" : "#navbar"}>
-      
       <li >
         <a to='/homecontent' className='active'>
           Home
@@ -328,15 +367,13 @@ renderSwitch(holder) {
         <a to="/homecontent"></a>
         </li>
     </ul>
-
   </div>
 
   <div id="mobile" 
   onClick=
   {this.handleClick}>
-    <i id="bar" 
-    className=
-    {this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+  <i className=
+    {this.state.clicked ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'}></i>
   </div>
   </nav>  
   
@@ -348,7 +385,7 @@ const TopDedsign =() => {
 
     return (
         <div>
-            <div class="top-design">
+            <div className="top-design">
             <p>Hi there, I am </p>
          <h1>Web, Mobile & Desktop Application Developer</h1>
           <p>Explore my programming journey and
@@ -366,10 +403,10 @@ const TopDedsignProfile =() => {
 return (
     <div>
         <div className="top-design-profile">
-      <img src="https://firebasestorage.googleapis.com/v0/b/tenglobal-2a34b.appspot.com/o/computer_and_desk%2Fquery_a_computer_screen_on_top_of_a(2).jpeg?alt=media&token=a3620e52-377f-4a01-ae05-c805c4c929f7" />
-      <p>Hi there, I am </p>
-     <h1>Software Developer</h1>
-      <small>- supported by TEN IT Solution© -</small>
+      <img src="https://firebasestorage.googleapis.com/v0/b/tenglobal-2a34b.appspot.com/o/profile_pic%2Ftrevor279_netshisaulu%2F0665750985%2FIMG_20241031_063032.jpg?alt=media&token=234fc1af-11fb-4618-a3bc-2a23a5a12f34" />
+      <p>Trevor Elelwani Netshisaulu </p>
+     <h2>Software Developer</h2>
+      <small>Transforming Ideas into Reality through <b>Code</b></small>
         </div>
     </div>
 )
@@ -391,6 +428,49 @@ const App=()=> {
  const homePage=()=> {
      setPageState(0);
  };
+
+ function IconComponent() {
+
+  const iconsRef = useRef(null);
+  const iconStyles = [
+    { left: '50px', top: '100px', color: "#a1351a" },
+    { left: '100px', top: '200px', color: "red" },
+    { left: '300px', top: '75px', color: "#003366" },
+    { left: '400px', top: '300px', color: "red" },
+    { left: '100px', top: '380px', color: "#336699" },
+    { left: '240px', top: '240px', color: "green" },
+    { left: '350px', top: '280px', color: "gold" },
+    { left: '40px', top: '320px', color: "brown" },
+    { left: '450px', top: '150px', color: "#f75b34" },
+  ];
+
+  useEffect(() => {
+    const icons = iconsRef.current.children;
+    Array.from(icons).forEach((icon, index) => {
+      icon.style.position = 'absolute';
+      icon.style.left = iconStyles[index].left;
+      icon.style.top = iconStyles[index].top;
+      icon.style.color = iconStyles[index].color;
+
+      const randomRotate = Math.random() * 360;
+      icon.style.transform = `rotate(${randomRotate}deg)`;
+    });
+  }, []);
+
+  return (
+    <div ref={iconsRef} className="icons-decoration">
+      <i className="fa-solid fa-money-bill-transfer"></i>
+      <i className="fa-solid fa-money-bill-trend-up"></i>
+      <i className="fa-solid fa-circle-dot"></i>
+      <i className="fa-solid fa-wand-magic-sparkles"></i>
+      <i className="fa-solid fa-hand-holding-heart"></i>
+      <i className="fa-regular fa-hourglass"></i>
+      <i className="fa-solid fa-tree"></i>
+      <i className="fa-regular fa-circle"></i>
+      <i className="fa-regular fa-gem"></i>
+    </div>
+  );
+}
  
  //pages Compontents
  
@@ -450,6 +530,80 @@ const ChooseDestination=()=> {
     )
 }
 
+const JavaCard=()=> {
+      return (
+        <div className="java-card" style={{width: '300px', margin: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '10px'}}>
+          <h2>Java</h2>
+          <p>Proficient in Android App Development, Desktop Software Development, and Backend Development with Spring Boot</p>
+          <button>View Projects</button>
+        </div>
+      );
+    }
+
+
+const JavascriptCard=()=> {
+    return (
+        <div className="java-card" style={{width: '300px', margin: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '10px'}}>
+          <h2>Javascript</h2>
+          <p>Proficient in Android App Development, Desktop Software Development, and Backend Development with Spring Boot</p>
+          <button>View Projects</button>
+        </div>
+      );
+    }
+
+    function JavaScriptCard() {
+      return (
+        <div style={{width: '300px', margin: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '10px'}}>
+          <h2>JavaScript</h2>
+          <p>Proficient in:</p>
+          <ul>
+            <li>Web Development</li>
+            <li>Mobile App Development with React Native</li>
+          </ul>
+          <p>Key Skills:</p>
+          <ul>
+            <li>React, React Native</li>
+            <li>JavaScript (ES6+)</li>
+            <li>HTML5, CSS3</li>
+            <li>Responsive Design</li>
+          </ul>
+          <button>View Projects</button>
+        </div>
+      );
+    }
+
+const SkillsIntroduction =()=> {
+    return (
+        <div>
+
+            <section className="language-section">
+      <h3>LANGAUES</h3>
+      <div className="language-content-cover">
+        <JavaCard />
+        <JavascriptCard />
+        <JavaScriptCard />
+          </div>
+          </section>
+
+        <section class="welcome-section">
+      <h3>Building innovative solutions.</h3>
+          <p class="welcome-section-p">
+          This portfolio showcases my expertise in programming, highlighting projects 
+          and accomplishments that demonstrate my passion for coding.</p>
+          <p class="welcome-section-p2">Transforming Ideas into Reality through Code</p>
+
+          <h4>Brief overview</h4>
+            <p>
+          Highly motivated and detail-oriented programmer with 10+ years of experience in 
+          developing scalable and efficient software solutions. Proficient in languages 
+          such as Java, Python, and JavaScript. Committed to delivering high-quality projects 
+          that exceed expectations
+              </p>
+          </section>
+          </div>
+    )
+}
+
 //ConfirmFinalPage
 const ConfirmFinalPage=()=> {
  
@@ -473,9 +627,13 @@ const ConfirmFinalPage=()=> {
     return (
         <div style={{textAlign: "center"}}>
             <div className="top-hearder">
+                <IconComponent />
             <Navbar />
             <TopDedsignProfile />
             <TopDedsign />
+            </div>
+            <div className="skills-intro-section">
+                <SkillsIntroduction />
             </div>
         <h3>How to switch page in React</h3>
         <p>page - {pageState + 1}</p>
