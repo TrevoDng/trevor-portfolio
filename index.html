@@ -16,11 +16,11 @@
     </script>
     
 -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> 
-    <script src="https://unpkg.com/react-router-dom@6.4.2/dist/react-router-dom.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" type="text/javascript" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" type="text/javascript" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js" type="text/javascript"></script> 
+    <script src="https://unpkg.com/react-router-dom@6.4.2/dist/react-router-dom.min.js" type="text/javascript"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/react-router-dom@6.4.2/dist/react-router-dom.min.js"></script>-->
    
     <link rel="stylesheet" href="/navbarStyles.css">
 
@@ -35,6 +35,10 @@
     <style>
 
         /*end of topnav*/
+
+        body {
+          letter-spacing: 0.5px;
+        }
 
         #profileImage {
             width: 50px;
@@ -72,8 +76,8 @@
 
     .top-hearder {
         position: relative;
-        background-color: #2b425518;
-        height: 400px;
+        background-color: #21adad1a;
+        height: 600px;
     }
 
         /* start topnave*/
@@ -85,17 +89,18 @@
         background: #fff;
         padding: 20px 10px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        border: none;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
 
 #navbar {
-    margin: -10px 0 0 0;
-}
-#navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10px;
-    z-index: 1;
+  margin: -10px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10px;
+  z-index: 1;
 }
 #navbar li {
     list-style: none;
@@ -131,7 +136,8 @@
 #navbar li a:hover,
 #navbar li a.active {
     
-    color: tomato;/*#17cf97;*/
+    color: #21adad;/*#17cf97;*/
+    cursor: pointer;
 }
 
 #navbar li a:hover::after,
@@ -139,14 +145,14 @@
     content: "";
     width: 30%;
     height: 2px;
-    background: tomato;
+    background: #21adad;
     position: absolute;
     bottom: -4px;
     left: 20px;
 }
 
 #mobile {
-    display: block;
+    display: none;
 }
 
 #mobile i {
@@ -155,6 +161,12 @@
 
 .author-name {
     font-size: 12px;
+}
+
+
+.author-name span:hover {
+    color: #007bff;
+    cursor: pointer;
 }
 
 /*start top design*/
@@ -171,12 +183,12 @@
  
  .top-design h1 {
      font-size: 1.5vw;
-     color: tomato;
+     color: #21adad;
  }
  
  .top-design p {
      font-size: 1.2vw;
-     color: #000000;
+     color: #000000e7;
  }
  
  .top-design small {
@@ -187,29 +199,36 @@
  .top-design-profile {
      position: absolute;
      top: 100px;
-     left: 20px;
+     left: 100px;
  }
 
  .top-design-profile img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border: none;
-    border-radius: 200px;
+    border-radius: 300px;
+ }
+
+ .top-design-profile h1 {
+     font-size: 0.9vw;
+     color: #21adad /*#007bff*/
  }
 
  .top-design-profile h2 {
      font-size: 0.9vw;
-     color: tomato;
+     color: #21adad /*#007bff*/
  }
  
  .top-design-profile p {
      font-size: 0.8vw;
-     color: #000000;
+     color: #ffffffe7;
  }
  
  .top-design-profile small {
      font-size: 12px;
-     padding: 20px;
+     padding: 0px;
+     margin: 0;
+     color: #ffffffc7;
  }
 
  #mobile {
@@ -229,6 +248,188 @@
 .language-section {
     background-color: #e0e0e036;
 }
+
+.language-content-cover {
+    display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+ gap: 2px;
+}
+
+.langauge-card { 
+    margin: 5px;
+    padding: 20px; 
+    border: none; 
+    border-radius: 10px;
+    text-align: center;
+    min-width: 235px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    /*background-color: #0a618a3f;*/
+}
+
+.langauge-card h2 {
+  color: #022046;
+}
+
+.langauge-card button {
+  
+}
+
+.language-more-text {
+  animation: slideIn 1s ease-in-out;
+}
+
+.language-more-text i {
+  
+} 
+
+.language-more-text ul {
+  list-style: none; /* Remove default numbering/dots */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.language-more-text li {
+  background-color: #f2f2f2;
+  padding: 10px; 
+  text-align: left;
+  
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.language-more-text li::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #007bff;
+  clip-path: polygon(0% 50%, 50% 100%, 100% 50%, 50% 0%);
+  margin-right: 10px;
+}
+
+.language-more-text li:hover::before {
+  background-color: #008cff;
+  transform: scale(1.2);
+}
+/*
+.language-more-text li::before {
+  content: "→  ";
+  font-size: 20px;
+  color: tomato;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+end of dropdown text*/
+.collapsible {
+  padding: 16px;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  background-color: #a0a0a000;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  /*transition: background-color 0.3s ease-in-out; */
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.collapsible span {
+  margin-right: 10px;
+}
+
+.collapsible:before {
+  content: "Learn More";
+  margin-right: 10px;
+}
+
+.active, .collapsible:hover, .collapsible:active {
+  background-color: #e0e0e0e3; 
+}
+
+.collapsible.active {
+  transition: background-color 0.1s ease-out;
+  background-color: #52555a;
+}
+
+.view-project {
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: bolder;
+  background-color: #21adad;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.527);
+}
+
+.top-design-button-cover {
+  text-align: center;
+  /*display: flex;
+  flex-direction: row;
+  */
+}
+
+.top-design-button-cover button{
+margin: 20px;
+}
+
+.icon-container {
+  margin: 0;
+}
+.icon-container i {
+  color: #21adad;
+  font-size: 30px;
+}
+
+.kotlin-icon {
+  margin: 0;
+  width: 20px;
+  height: 20px; 
+}
+
+
+.kotlin-icon svg{
+  fill: #21adad;
+  color: #21adad; 
+}
+
+.intro-img-container img {
+  width: 50px;
+  height: 50px;
+}
+
+#technology-cover {
+  margin: auto;
+  width: 80%;
+  border: 3px solid #21adad;
+  padding: 10px;
+}
+
+#technology-cover .langauge-card {
+  display: inline-block;
+  align-content: center;
+  width: auto;
+  padding: 0;
+  /*background-color: #00438a;*/
+} 
+
+.intro-design-cover {
+  padding: 50px 200px 50px 200px;
+  margin: 0;
+  /*background-color: #21adad;*/
+}
+
+/*end of dropdown text*/
 @media screen and (min-width:769px) {
     .welcome-section {
     padding: 50px 200px 50px 200px;
@@ -237,8 +438,9 @@
         padding: 50px 5px 50px 5px;
     }
     .language-content-cover {
-        display: flex;
+        /*display: flex;
         flex-direction: row;
+        */
     }
 
     .language-content-cover {
@@ -260,7 +462,7 @@
         right: -300px;
         width: 300px;
         height: 100vh;
-        background: #2a3239;
+        /*background: #2a3239;*/
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
         padding: 40px 0 0 10px;
         transition: 0.3s ease-in-out;
@@ -288,15 +490,21 @@
     }
 
     .main-web-cover{
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
+}
+
+.home-a-tag {
+  background-color: #00000000;
+  color: red;
 }
     </style>
   </head>
   <body>
     <div class="main-web-cover">
     <div id="container"></div>
-  
     <div id="root"></div> 
 </div>  
     <script>
@@ -307,7 +515,8 @@
   //  import { Navbar } from 'navbar.js';
 
 //import react
-const {useState, useEffect, useRef} = React;
+const {useState, useEffect, useId, useCallback, useRef} = React;
+const { createRoot } = ReactDOM;
 
 
 const { Component } = React;
@@ -346,8 +555,8 @@ renderSwitch(holder) {
     <ul id="navbar" 
     className={this.state.clicked ? 
       "#navbar active" : "#navbar"}>
-      <li >
-        <a to='/homecontent' className='active'>
+      <li>
+        <a id="home-a-tag" to='/homecontent' className='active home-a-tag'>
           Home
         </a>
         </li>
@@ -381,29 +590,36 @@ renderSwitch(holder) {
 }
 }
 
-const TopDedsign =() => {
+const TopDesign =() => {
 
     return (
         <div>
             <div className="top-design">
             <p>Hi there, I am </p>
          <h1>Web, Mobile & Desktop Application Developer</h1>
-          <p>Explore my programming journey and
-             discover the skills I''ve acquired along the way.
-          </p>
-          <small>- supported by TEN IT Solution© -</small>
+          <p style={{marginBottom: "50px"}}>Explore my programming journey and
+             discover the skills I've acquired along the way.
+
+             </p >
+          <hr style={{color: "#21adad"}}></hr>
+
+          <div className="top-design-button-cover" style={{ textAlign: 'center', paddingTop: '20px' }}>
+        <button className="view-project" style={{paddingRight: "25px", paddingLeft: "25px"}}>Hire Me</button>
+        <button className="view-project">Download cv</button>
+      </div>
             </div>
+
+            
         </div>
     )
 }
 
-
-const TopDedsignProfile =() => {
+const TopDesignProfile =() => {
 
 return (
     <div>
         <div className="top-design-profile">
-      <img src="https://firebasestorage.googleapis.com/v0/b/tenglobal-2a34b.appspot.com/o/profile_pic%2Ftrevor279_netshisaulu%2F0665750985%2FIMG_20241031_063032.jpg?alt=media&token=234fc1af-11fb-4618-a3bc-2a23a5a12f34" />
+      <img src="images/my_img-removebg-preview.png" />
       <p>Trevor Elelwani Netshisaulu </p>
      <h2>Software Developer</h2>
       <small>Transforming Ideas into Reality through <b>Code</b></small>
@@ -412,11 +628,49 @@ return (
 )
 }
 
+const IntroDesign =() => {
+
+return (
+    <div>
+        <div className="intro-design-cover">
+      <h1>Tech Architect, Software Engineer</h1>
+      <p>Highly motivated and detail-oriented software developer with a 
+        strong passion for building innovative solutions.</p>  
+      <p>Proven ability to work independently and collaboratively, 
+with a track record of delivering high-quality projects on time. Committed to
+staying up-to-date with industry trends and best practices.
+        </p>
+    
+        </div>
+    </div>
+  )
+}
+
 //end of navbar component
 
 const App=()=> {
  const [pageState, setPageState] = useState(0);
  
+ //languages variables
+
+ //const contentRef = useRef(null);
+  const [clicked, setClicked] = useState({
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+    5: false,
+  });
+  const [isActive, setIsActive] = useState({});
+  const [height, setHeight] = useState({
+    1: 0,
+  2: 0,
+  3: 0,
+  4: 0,
+  5: 0,
+  });
+  
+
  const nextPage=()=> {
      setPageState(()=> pageState + 1);
  };
@@ -428,6 +682,99 @@ const App=()=> {
  const homePage=()=> {
      setPageState(0);
  };
+
+ //languages functions
+ //const id = useId();
+  
+
+ //let contentId;
+ const [activeId, setActiveId] = useState(null);
+//const [height, setHeight] = useState({});
+
+// Close all other elements
+const closeAllElements = useCallback((id) => {
+    if (height) {
+      Object.keys(height).forEach((key) => {
+        if (key !== id.toString()) {
+          setHeight((prev) => ({ ...prev, [key]: 0 }));
+          setClicked((prev) => ({ ...prev, [key]: false }));
+        }
+      });
+    }
+  }, [height, setHeight, setClicked]);
+
+  // Handle toggle
+  const handleToggle = useCallback((id) => {
+    closeAllElements(id);
+
+    if (activeId === id) {
+      setActiveId(null);
+      setHeight((prev) => ({ ...prev, [id]: 0 }));
+      setClicked((prev) => ({ ...prev, [id]: false }));
+    } else {
+      setActiveId(id);
+      const contentHeight = document.getElementById(id).scrollHeight;
+      setHeight((prev) => ({ ...prev, [id]: contentHeight }));
+      setClicked((prev) => ({ ...prev, [id]: true }));
+    }
+  }, [activeId, closeAllElements, setHeight, setActiveId, setClicked]);
+/*
+  const handleToggle = useCallback((id) => {
+  // Close all other opened elements
+  Object.keys(height).forEach((key) => {
+    if (key !== id.toString()) {
+      setHeight((prev) => ({ ...prev, [key]: 0 }));
+      setClicked((prev) => ({ ...prev, [key]: false }));
+    }
+  });
+
+  if (activeId === id) {
+    setActiveId(null);
+    setHeight((prev) => ({ ...prev, [id]: 0 }));
+    setClicked((prev) => ({ ...prev, [id]: false }));
+  } else {
+    setActiveId(id);
+    const contentHeight = document.getElementById(id).scrollHeight;
+    setHeight((prev) => ({ ...prev, [id]: contentHeight }));
+    setClicked((prev) => ({ ...prev, [id]: true }));
+  }
+}, [height, activeId, setHeight, setActiveId, setClicked]);
+*/
+ /*
+ const handleToggle = (id) => {
+  setIsActive((prev) => ({ ...prev, [id]: !prev[id] }));
+  const contentHeight = document.getElementById(id).scrollHeight;
+  setHeight((prev) => ({ ...prev, [id]: isActive[id] ? 0 : contentHeight }));
+  setClicked((prev) => ({ ...prev, [id]: !prev[id] }));
+  document.getElementById(id).classList.toggle('active');
+};
+ 
+*/
+  /*
+ const contentId = `content-${Math.random()}`;
+ const handleToggle=()=> {
+  setIsActive(!isActive);
+  setHeight(isActive ? 0 : document.getElementById(contentId).scrollHeight);
+  setClicked(!clicked);
+}
+*/
+
+ /*
+ const handleToggle = () => {
+    if (contentRef.current) {
+      setIsActive(!isActive);
+      setHeight(isActive ? 0 : contentRef.current.scrollHeight);
+      setClicked(!clicked);
+    }
+  };
+  
+ const handleToggle = (event) => {
+    setIsActive(!isActive);
+    setHeight(isActive ? 0 : event.target.scrollHeight);
+    setClicked(!clicked);
+  };
+  */
+ //end of languages function
 
  function IconComponent() {
 
@@ -531,45 +878,232 @@ const ChooseDestination=()=> {
 }
 
 const JavaCard=()=> {
+  
       return (
-        <div className="java-card" style={{width: '300px', margin: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '10px'}}>
+        <div className="langauge-card java-card">
+          <p className="icon-container"><i className="fa-brands fa-java"></i></p>
           <h2>Java</h2>
           <p>Proficient in Android App Development, Desktop Software Development, and Backend Development with Spring Boot</p>
-          <button>View Projects</button>
+         
+          
+      <div>
+        <button
+          className={`collapsible ${isActive[1] ? 'active' : ''}`}
+          onClick={()=> handleToggle(1)}
+        >
+          <i className={clicked[1] ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'}></i>
+        </button>
+      </div>
+
+      <div
+        className={`language-more-text content ${activeId === 1 ? 'active' : ''}`}
+        id={1}
+        style={{ maxHeight: `${height[1]}px`, overflow: 'hidden', transition: 'max-height 0.2s ease-out' }}
+      >
+        <p>Key Skills:</p>
+        <ul>
+          <li>React, React Native</li>
+          <li>JavaScript (ES6+)</li>
+          <li>HTML5, CSS3</li>
+          <li>Responsive Design</li>
+        </ul>
+      </div>
+
+          <div style={{textAlign: 'center', paddingTop: '20px'}}>
+          <button className="view-project">View Projects</button>
+          </div>
         </div>
       );
     }
 
+function JavaScriptCard() {
 
-const JavascriptCard=()=> {
-    return (
-        <div className="java-card" style={{width: '300px', margin: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '10px'}}>
-          <h2>Javascript</h2>
-          <p>Proficient in Android App Development, Desktop Software Development, and Backend Development with Spring Boot</p>
-          <button>View Projects</button>
-        </div>
-      );
-    }
+  return (
+    <div className="langauge-card javascript-card">
+      <p className="icon-container"><i className="fa-brands fa-js"></i></p>
+      <h2>JavaScript</h2>
+      <p>Proficient in Web Development
+        Mobile App Development with React Native
+      </p>
+      <div>
+        <button
+          className={`collapsible ${isActive[2] ? 'active' : ''}`}
+          onClick={()=> handleToggle(2)}
+        >
+          <i className={clicked[2] ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'}></i>
+        </button>
+      </div>
 
-    function JavaScriptCard() {
+      <div
+        className={`language-more-text content ${activeId === 2 ? 'active' : ''}`}
+        id={2}
+        style={{ maxHeight: `${height[2]}px`, overflow: 'hidden', transition: 'max-height 0.2s ease-out' }}
+      >
+        <p>Key Skills:</p>
+        <ul>
+          <li>React, React Native</li>
+          <li>JavaScript (ES6+)</li>
+          <li>HTML5, CSS3</li>
+          <li>Responsive Design</li>
+        </ul>
+      </div>
+      <div style={{ textAlign: 'center', paddingTop: '20px' }}>
+        <button className="view-project">View Projects</button>
+      </div>
+    </div>
+  );
+}
+
+    function CSSCard() {
       return (
-        <div style={{width: '300px', margin: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '10px'}}>
-          <h2>JavaScript</h2>
-          <p>Proficient in:</p>
-          <ul>
-            <li>Web Development</li>
-            <li>Mobile App Development with React Native</li>
-          </ul>
+        <div className="langauge-card css-card">
+          <p className="icon-container"><i className="fa-brands fa-js"></i></p>
+          <h2>CSS</h2>
+          <p>Proficient in CSS3 Responsive Design, Mobile-First Development,
+            Flexbox, Grid, and Bootstrap Tailwind CSS
+          </p>
+
+
+      <div>
+        <button
+          className={`collapsible ${isActive[3] ? 'active' : ''}`}
+          onClick={()=> handleToggle(3)}
+        >
+          <i className={clicked[3] ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'}></i>
+        </button>
+      </div>
+
+      <div
+        className={`language-more-text content ${activeId === 3 ? 'active' : ''}`}
+        id={3}
+        style={{ maxHeight: `${height[3]}px`, overflow: 'hidden', transition: 'max-height 0.2s ease-out' }}
+      >
+        
           <p>Key Skills:</p>
           <ul>
-            <li>React, React Native</li>
-            <li>JavaScript (ES6+)</li>
-            <li>HTML5, CSS3</li>
-            <li>Responsive Design</li>
+            <li>Layouts</li>
+            <li>Styling</li>
+            <li>Animation</li>
+            <li>Transitions</li>
           </ul>
-          <button>View Projects</button>
+      </div>
+          
+          <div style={{textAlign: 'center', paddingTop: '20px'}}>
+          <button className="view-project">View Projects</button>
+          </div>
         </div>
       );
+    }
+
+    function HTMLCard() {
+      return (
+        <div className="langauge-card html-card">
+          <p className="icon-container"><i class="fa-brands fa-html5"></i></p>
+          <h2>HTML</h2>
+          <p>Proficient in HTML5 Semantic Markup Accessibility Responsive Design and Microformats
+          </p>
+
+
+      <div>
+        <button
+          className={`collapsible ${isActive[4] ? 'active' : ''}`}
+          onClick={()=> handleToggle(4)}
+        >
+          <i className={clicked[4] ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'}></i>
+        </button>
+      </div>
+
+      <div
+        className={`language-more-text content ${activeId === 4 ? 'active' : ''}`}
+        id={4}
+        style={{ maxHeight: `${height[4]}px`, overflow: 'hidden', transition: 'max-height 0.2s ease-out' }}
+      >  
+          <p>Key Skills:</p>
+          <ul>
+            <li>Structuring Content</li>
+            <li>Form Validation</li>
+            <li>Audio/Video Embedding</li>
+            <li>Canvas and SVG</li>
+          </ul>
+      </div>
+
+          
+          <div style={{textAlign: 'center', paddingTop: '20px'}}>
+          <button className="view-project">View Projects</button>
+          </div>
+        </div>
+      );
+    }
+
+    function KotlinCard() {
+      return (
+        <div className="langauge-card kotlin-card">
+          <p className="icon-container"><img src="images/4691442_kotlin_icon.svg" className="kotlin-icon"/></p>
+          <h2>Kotlin</h2>
+          <p>Proficient in 
+            Android App Development
+            Coroutines
+            Flow
+            Room Persistence
+            Kotlinx.serialization</p>
+
+
+      <div>
+        <button
+          className={`collapsible ${isActive[5] ? 'active' : ''}`}
+          onClick={()=> handleToggle(5)}
+        >
+          <i className={clicked[5] ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'}></i>
+        </button>
+      </div>
+
+      <div
+        className={`language-more-text content ${activeId === 5 ? 'active' : ''}`}
+        id={5}
+        style={{ maxHeight: `${height[5]}px`, overflow: 'hidden', transition: 'max-height 0.2s ease-out' }}
+      >
+          <p>Key Skills:</p>
+          <ul>
+            <li>Android Studio</li>
+            <li>Gradle</li>
+            <li>Kotlin Extensions</li>
+            <li>Null Safety</li>
+          </ul>
+      </div>
+    
+          <div style={{textAlign: 'center', paddingTop: '20px'}}>
+          <button className="view-project">View Projects</button>
+          </div>
+        </div>
+      );
+    }
+
+    const Introduction =()=> {
+
+      return (
+        <section className="intro-content-cover technology-cover" id="technology-cover">
+          <div className="langauge-card" style={{boxShadow: "none"}}>
+            <i></i>
+            <p className="icon-container intro-img-container">
+              <img src="images/274894_planet_web_globe_technology_internet_icon.svg" className="kotlin-icon"/></p>
+            <p style={{fontSize:"12px"}}>Website development</p>
+          </div>
+
+          <div className="langauge-card" style={{boxShadow: "none"}}>
+            <i></i>
+            <p className="icon-container intro-img-container">
+              <img src="images/7156615_android_robot_phone_icon.svg" className="kotlin-icon"/></p>
+            <p style={{fontSize:"12px"}}>Android development</p>
+          </div>
+
+          <div className="langauge-card" style={{boxShadow: "none"}}>
+            <i></i>
+            <p className="icon-container intro-img-container">
+              <img src="images/290121_computer_desktop_monitor_computer screen_icon.svg" className="kotlin-icon"/></p>
+            <p style={{fontSize:"12px"}}>Desktop Software development</p>
+          </div>
+        </section>
+      )
     }
 
 const SkillsIntroduction =()=> {
@@ -580,17 +1114,19 @@ const SkillsIntroduction =()=> {
       <h3>LANGAUES</h3>
       <div className="language-content-cover">
         <JavaCard />
-        <JavascriptCard />
         <JavaScriptCard />
+        <CSSCard />
+        <HTMLCard />
+        <KotlinCard />
           </div>
           </section>
 
-        <section class="welcome-section">
+        <section className="welcome-section">
       <h3>Building innovative solutions.</h3>
-          <p class="welcome-section-p">
+          <p className="welcome-section-p">
           This portfolio showcases my expertise in programming, highlighting projects 
           and accomplishments that demonstrate my passion for coding.</p>
-          <p class="welcome-section-p2">Transforming Ideas into Reality through Code</p>
+          <p className="welcome-section-p2">Transforming Ideas into Reality through Code</p>
 
           <h4>Brief overview</h4>
             <p>
@@ -627,10 +1163,14 @@ const ConfirmFinalPage=()=> {
     return (
         <div style={{textAlign: "center"}}>
             <div className="top-hearder">
-                <IconComponent />
-            <Navbar />
-            <TopDedsignProfile />
-            <TopDedsign />
+              <IconComponent />
+              <Navbar />
+              <TopDesignProfile />
+              <TopDesign />
+            </div>
+            <IntroDesign />
+            <div class="portfolio-introduction" style={{padding: "100px 5px 100px 5px"}}>
+              <Introduction />  
             </div>
             <div className="skills-intro-section">
                 <SkillsIntroduction />
@@ -673,8 +1213,10 @@ const ConfirmFinalPage=()=> {
     )
 }
 
-ReactDOM.render(
-<App />, document.getElementById('root'));
+//ReactDOM.render(
+//<App />, document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+  root.render(<App />);
 
 //___________________________________
 </script>
