@@ -187,7 +187,7 @@
  }
  
  .top-design p {
-     font-size: 1.2vw;
+     font-size: 15px;
      color: #000000e7;
  }
  
@@ -221,7 +221,7 @@
  
  .top-design-profile p {
      font-size: 0.8vw;
-     color: #ffffffe7;
+     color: #000000e7;
  }
  
  .top-design-profile small {
@@ -412,6 +412,7 @@ margin: 20px;
   margin: auto;
   width: 80%;
   border: 3px solid #21adad;
+  border: none;
   padding: 10px;
 }
 
@@ -426,7 +427,17 @@ margin: 20px;
 .intro-design-cover {
   padding: 50px 200px 50px 200px;
   margin: 0;
-  /*background-color: #21adad;*/
+  background-color: #21adad00;
+}
+
+
+.intro-design-cover h1 {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.intro-design-cover p {
+    font-size: 14px;
 }
 
 /*end of dropdown text*/
@@ -474,6 +485,12 @@ margin: 20px;
     #navbar li {
         margin-bottom: 25px;
     }
+
+    .intro-design-cover {
+      padding: 50px 10px 50px 10px;
+      margin: 0;
+      /*background-color: #21adad;*/
+  }
 
 #mobile {
     display: block;
@@ -597,9 +614,11 @@ const TopDesign =() => {
             <div className="top-design">
             <p>Hi there, I am </p>
          <h1>Web, Mobile & Desktop Application Developer</h1>
-          <p style={{marginBottom: "50px"}}>Explore my programming journey and
+          <p style={{marginBottom: "50px"}}>
+            Full-Stack Developer & Digital Solutions Expert.
+            Explore my programming journey and
              discover the skills I've acquired along the way.
-
+            
              </p >
           <hr style={{color: "#21adad"}}></hr>
 
@@ -620,8 +639,8 @@ return (
     <div>
         <div className="top-design-profile">
       <img src="images/my_img-removebg-preview.png" />
-      <p>Trevor Elelwani Netshisaulu </p>
-     <h2>Software Developer</h2>
+      <p>T.E NETSHISAULU - Tech Architect</p>
+     <h2>Tech Architect</h2>
       <small>Transforming Ideas into Reality through <b>Code</b></small>
         </div>
     </div>
@@ -633,7 +652,7 @@ const IntroDesign =() => {
 return (
     <div>
         <div className="intro-design-cover">
-      <h1>Tech Architect, Software Engineer</h1>
+      <h1>About me</h1>
       <p>Highly motivated and detail-oriented software developer with a 
         strong passion for building innovative solutions.</p>  
       <p>Proven ability to work independently and collaboratively, 
@@ -1169,7 +1188,9 @@ const ConfirmFinalPage=()=> {
               <TopDesign />
             </div>
             <IntroDesign />
-            <div class="portfolio-introduction" style={{padding: "100px 5px 100px 5px"}}>
+            {/*backgroundColor: "#21adad23"*/}
+            <div class="portfolio-introduction" style={{padding: "10px 5px 100px 5px"}}>
+              <h4 style={{margin: "10px 5px 40px 5px"}}>Technology Expertise</h4>
               <Introduction />  
             </div>
             <div className="skills-intro-section">
