@@ -77,7 +77,18 @@
     .top-hearder {
         position: relative;
         background-color: #21adad1a;
-        height: 600px;
+        height: auto;
+    }
+
+    .top-hearder-item-container {
+      display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .top-hearder-item {
+      
     }
 
         /* start topnave*/
@@ -171,18 +182,16 @@
 
 /*start top design*/
 .top-design {
-     position: absolute;
-     top: 100px;
-     right: 10px;
+     position: relative;
      max-width: 400px;
-     /*background-color: #0000007c;*/
+/*     background-color: #0000007c;*/
      padding: 20px;
      border: none;
      border-radius: 10px;
  }
  
  .top-design h1 {
-     font-size: 1.5vw;
+     font-size: 18px;
      color: #21adad;
  }
  
@@ -197,9 +206,8 @@
  }
 
  .top-design-profile {
-     position: absolute;
-     top: 100px;
-     left: 100px;
+     position: relative;
+    /* background-color: #21adad;*/
  }
 
  .top-design-profile img {
@@ -216,12 +224,12 @@
 
  .top-design-profile h2 {
      font-size: 0.9vw;
-     color: #21adad /*#007bff*/
+     color: #002020; /*#007bff*/
  }
  
  .top-design-profile p {
-     font-size: 0.8vw;
-     color: #000000e7;
+     font-size: 12px;
+     color: #000e0e;
  }
  
  .top-design-profile small {
@@ -262,11 +270,15 @@
     border-radius: 10px;
     text-align: center;
     min-width: 235px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    /*background-color: #0a618a3f;*/
+    /*box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    background-color: #0a618a3f;*/
 }
 
 .langauge-card h2 {
+  color: #022046;
+}
+
+.portfolio-headings {
   color: #022046;
 }
 
@@ -412,7 +424,6 @@ margin: 20px;
   margin: auto;
   width: 80%;
   border: 3px solid #21adad;
-  border: none;
   padding: 10px;
 }
 
@@ -439,6 +450,41 @@ margin: 20px;
 .intro-design-cover p {
     font-size: 14px;
 }
+
+
+/*start of langauge graph*/
+.language-graph {
+ /* display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  */
+  padding: 20px;
+  background-color: #21adad38;
+}
+
+.language-bar {
+  /*display: flex;
+  flex-direction: column;
+  */
+  align-items: center;
+  width: 150px;
+  margin: 10px;
+  background-color: #03405c;
+  color: white;
+}
+
+.language-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.language-level {
+  height: auto;
+  background-color: #21adad;
+  border-radius: 5px;
+}
+/*end of langauge graph*/
+
 
 /*end of dropdown text*/
 @media screen and (min-width:769px) {
@@ -499,6 +545,21 @@ margin: 20px;
     font-size: 24px;
     cursor: pointer; 
 }
+
+.top-design {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.top-hearder-item-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .top-design-profile {
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (min-width: 1340px) {
@@ -611,7 +672,7 @@ const TopDesign =() => {
 
     return (
         <div>
-            <div className="top-design">
+            <div className="top-hearder-item top-design">
             <p>Hi there, I am </p>
          <h1>Web, Mobile & Desktop Application Developer</h1>
           <p style={{marginBottom: "50px"}}>
@@ -637,12 +698,9 @@ const TopDesignProfile =() => {
 
 return (
     <div>
-        <div className="top-design-profile">
+        <div className="top-hearder-item top-design-profile">
       <img src="images/my_img-removebg-preview.png" />
-      <p>T.E NETSHISAULU - Tech Architect</p>
-     <h2>Tech Architect</h2>
-      <small>Transforming Ideas into Reality through <b>Code</b></small>
-        </div>
+      <p>T.E NETSHISAULU - Tech Architect</p></div>
     </div>
 )
 }
@@ -653,7 +711,7 @@ return (
     <div>
         <div className="intro-design-cover">
       <h1>About me</h1>
-      <p>Highly motivated and detail-oriented software developer with a 
+      <p>My name is <b>Trevor Elelelwani Netshisaulu.</b> Highly motivated and detail-oriented software developer with a 
         strong passion for building innovative solutions.</p>  
       <p>Proven ability to work independently and collaboratively, 
 with a track record of delivering high-quality projects on time. Committed to
@@ -1125,6 +1183,96 @@ function JavaScriptCard() {
       )
     }
 
+    const languages = [
+  { name: 'JavaScript', level: 80 },
+  { name: 'HTML/CSS', level: 90 },
+  { name: 'React', level: 85 },
+  { name: 'Python', level: 60 },
+  { name: 'Java', level: 40 }
+];
+
+const LanguageGraph = () => {
+  return (
+    <div className="language-graph">
+      <h4 class="language-proficiency portfolio-headings">LANGUAGE PROFICIENCY</h4>
+      {languages.map((language, index) => (
+        <div key={index} className="language-bar">
+          <span className="language-name">{language.name}</span>
+          <div className="language-level" style={{ width: `${language.level}%` }}>
+            <span className="language-name">{language.level}%</span>
+            </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const Libraries =()=> {
+
+return (
+  <section className="intro-content-cover technology-cover" id="technology-cover">
+    <div className="langauge-card" style={{boxShadow: "none"}}>
+      <i></i>
+      <p className="icon-container intro-img-container">
+        <img src="images/1174949_js_react js_logo_react_react native_icon.svg" className="kotlin-icon"/></p>
+      <p style={{fontSize:"12px"}}>React</p>
+    </div>
+
+    <div className="langauge-card" style={{boxShadow: "none"}}>
+      <i></i>
+      <p className="icon-container intro-img-container">
+        <img src="images/9080441_brand_react_native_icon.svg" className="kotlin-icon"/></p>
+      <p style={{fontSize:"12px"}}>React Native</p>
+    </div>
+
+    <div className="langauge-card" style={{boxShadow: "none"}}>
+      <i></i>
+      <p className="icon-container intro-img-container">
+        <img src="images/9080412_brand_bootstrap_icon.svg" className="kotlin-icon"/></p>
+      <p style={{fontSize:"12px"}}>Bootstrap</p>
+    </div>
+
+    <div className="langauge-card" style={{boxShadow: "none"}}>
+      <i></i>
+      <p className="icon-container intro-img-container">
+        <img src="images/9035101_logo_nodejs_icon.svg" className="kotlin-icon"/></p>
+      <p style={{fontSize:"12px"}}>Nodejs</p>
+    </div>
+
+    <div className="langauge-card" style={{boxShadow: "none"}}>
+      <i></i>
+      <p className="icon-container intro-img-container">
+        <img src="images/9055841_bxl_spring_boot_icon.svg" className="kotlin-icon"/></p>
+      <p style={{fontSize:"12px"}}>Spring Boot</p>
+    </div>
+  </section>
+)
+}
+
+const libraries = [
+  { name: 'React', level: 80 },
+  { name: 'Springboot', level: 90 },
+  { name: 'Nodejs', level: 85 },
+  { name: 'Bootstrap', level: 60 },
+  { name: 'React Native', level: 40 }
+];
+
+const LibraryGraph = () => {
+  return (
+    <div className="language-graph">
+      <h4 class="language-proficiency portfolio-headings">LIBRARIE PROFICIENCY</h4>
+      {libraries.map((librarie, index) => (
+        <div key={index} className="language-bar">
+          <span className="language-name">{librarie.name}</span>
+          <div className="language-level" style={{ width: `${librarie.level}%` }}>
+            <span className="language-name">{`${librarie.level}%`}</span>
+            </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const SkillsIntroduction =()=> {
     return (
         <div>
@@ -1139,6 +1287,16 @@ const SkillsIntroduction =()=> {
         <KotlinCard />
           </div>
           </section>
+
+          <section>
+            <LanguageGraph />
+            </section>
+
+          <section>
+            <h4 class="language-proficiency portfolio-headings">LIBRARIE PROFICIENCY</h4>
+          <Libraries />
+          <LibraryGraph />
+            </section>
 
         <section className="welcome-section">
       <h3>Building innovative solutions.</h3>
@@ -1184,15 +1342,18 @@ const ConfirmFinalPage=()=> {
             <div className="top-hearder">
               <IconComponent />
               <Navbar />
+              <div class="top-hearder-item-container">
               <TopDesignProfile />
               <TopDesign />
+              </div>
             </div>
             <IntroDesign />
             {/*backgroundColor: "#21adad23"*/}
             <div class="portfolio-introduction" style={{padding: "10px 5px 100px 5px"}}>
-              <h4 style={{margin: "10px 5px 40px 5px"}}>Technology Expertise</h4>
+              <h4 style={{margin: "10px 5px 40px 5px"}}>Digital Solutions</h4>
               <Introduction />  
             </div>
+            
             <div className="skills-intro-section">
                 <SkillsIntroduction />
             </div>
