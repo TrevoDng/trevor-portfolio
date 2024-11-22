@@ -5,27 +5,31 @@
     <title>
     Trevor Portfolio
   </title>
-    
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
   integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
   crossorigin="anonymous" 
   referrerpolicy="no-referrer" />
-  <!--
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin>
-    </script>
-    
--->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+ <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">-->
     <script src="https://unpkg.com/react@18/umd/react.development.js" type="text/javascript" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" type="text/javascript" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js" type="text/javascript"></script> 
     <script src="https://unpkg.com/react-router-dom@6.4.2/dist/react-router-dom.min.js" type="text/javascript"></script>
     <script src="https://unpkg.com/react-bootstrap@2.5.0/dist/react-bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/react-router-dom@6.4.2/dist/react-router-dom.min.js"></script>-->
+    <script>
+      window.reactBootstrap = window.reactBootstrap || {};
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+  
    
+    <!--React slick-->
+    <script src="https://unpkg.com/react-slick@0.28.1/dist/react-slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" charset="utf-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css" charset="utf-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+  
     <link rel="stylesheet" href="/navbarStyles.css">
 
     <!--
@@ -85,10 +89,12 @@
     }
 
     .top-hearder-item-container {
+      /*
       display: flex;
         flex-direction: row;
         justify-content: center;
         gap: 40px;
+        */
     }
 
     .top-hearder-item {
@@ -250,7 +256,116 @@
  #mobile i{
     color: #000000;
  }
-/*end stop design*/
+/*end top design*/
+
+/*top design 2*/
+.main-navigation-bar {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+.main-navigation-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-navigation-bar li {
+  margin-right: 20px;
+}
+
+.main-navigation-bar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero-section-container {
+  background-color: #f7f7f7;
+  padding: 5em 0;
+}
+
+.hero-section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-section-profile-image-container {
+  flex-basis: 50%;
+}
+
+.hero-section-profile-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 20px auto;
+}
+
+.hero-section-text-container {
+  flex-basis: 50%;
+}
+
+.hero-section-heading {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-section-subheading {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.hero-section-description {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero-section-cta-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section-profile-image-container, .hero-section-text-container {
+    flex-basis: 100%;
+  }
+  
+  .hero-section-profile-image {
+    margin: 10px auto;
+  }
+  
+  .hero-section-heading {
+    font-size: 24px;
+  }
+  
+  .hero-section-subheading, .hero-section-description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-navigation-bar {
+    padding: 0.5em;
+  }
+  
+  .hero-section-container {
+    padding: 2em 0;
+  }
+}
+/*top design 2*/
 
 .welcome-section {
     padding: 5px 50px 5px 50px;
@@ -625,11 +740,21 @@ margin: 20px;
     background-color: rgba(0, 0, 0, 0.7);
     display: none;
     z-index: 1000;
+    animation: fadeIn 0.5s;
   }
 
   .lightbox.show {
     display: block;
   }
+
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
   .lightbox img {
     position: absolute;
@@ -650,8 +775,526 @@ margin: 20px;
     cursor: pointer;
     color: #fff;
   }
+
+
 /*end of projects*/
 
+/*testimonail css*/
+
+.testimonials-outer-layer {
+      position: relative;
+           background-color: #33669900;
+       }
+
+ .testimonials-outer-layer h3 {
+     color: #074f6b;
+     padding: 50px;
+     font-size: 5.2vw;
+     background-color: #336699;
+ }
+
+ /*
+ .testimonials-outer-layer .testimonials-button{
+    position: absolute;
+    top: 62%;
+    transform: translateY(-52%);
+    color: #fff;
+    margin-left: 20px;
+    border: none;
+    background: #00336699;
+    cursor: pointer;
+    z-index: 1;
+ }
+*/
+ #scroll-right {
+  position: absolute;
+    top: 72%;
+    right: 20px;
+    /*transform: translateY(-52%);*/
+    color: #fff;
+    margin-left: 20px;
+    border: none;
+    background: #00336699;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+ #scroll-left {
+  position: absolute;
+    top: 72%;
+    left: 15px;
+    /*transform: translateY(-52%);*/
+    color: #fff;
+    margin-left: 0px;
+    border: none;
+    background: #00336699;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  #scroll-left:hover {
+    background-color: #0251a099;
+  }
+
+  #scroll-right:hover {
+    background-color: #0251a099;
+  }
+ /*
+ .testimonials-outer-layer .testimonials-button:nth-child(2) {
+   right: 0;
+   margin-right: 20px;
+ }
+   */
+
+ .testimonials-outer-layer button i{
+   color: #fff;
+   font-size: xx-large;
+   border: none;
+   background: none;
+ }
+  
+  .testimonials-container {    
+    position: relative;   
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+         /*
+         display: grid;
+         grid-template-columns: repeat(auto-fill, 150px);
+         grid-gap: 10px;
+         */
+    margin: 2px; 
+    background-color: #33669939;
+    padding: 10px;
+  }
+
+ .testimonials-container i{
+   color: #336699;
+ }
+ 
+     .testimonials {
+       display: block;
+      flex: 0 0 250px; /* Set a fixed width for each testimonial */
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid #000000;
+      border-radius: 10px;
+      max-width: 250px;
+     /*
+        grid-column: auto;
+        */
+        border: 1px solid #ddd;
+     }
+
+     #testimonials {
+      border: 2px solid #000000;
+     }
+ 
+     .testimonials h2 {
+       margin:10px;
+     }
+     
+     .testimonials i{
+       width: 100px;
+       height: 00px;
+       border-radius: 50px;
+     }
+     
+ 
+   @media screen and (min-width: 1340px) {
+       .testimonials h2 {
+   margin: 0;
+ }
+   }
+/*end of testimonials css*/
+
+
+/*slider*/
+.slider-container {
+      position: relative;
+      width: 80%;
+      height: 400px;
+      margin: 40px auto;
+      overflow: hidden;
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slider-item {
+      width: 100%;
+      height: 100%;
+      background-color: #f2f2f2;
+      padding-top: 50px;
+      /*display: flex;
+      justify-content: center;
+      align-items: center;
+      */
+    }
+
+    .slider-content-cover {
+      position: relative;
+      border: 1px solid #000;
+      border-radius: 10px;
+      background-color: #21adad00;
+      padding: 20px;
+    }
+    .slider-content-cover img {
+      position: absolute;
+      top: -30px;
+      left: 45%;
+      border: 5px solid;
+      border-radius: 50px;
+      border-top-color: #ff69b400;
+  border-right-color: #21adad;
+  border-bottom-color: #6666cc00;
+  border-left-color: #21adad;
+  border-radius: 50px;
+    }
+
+    .slider-content-cover p {
+      font-size: small;
+    }
+
+    .slider-controls {
+      position: absolute;
+      top: 150px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    .slider-controls button {
+    color: #fff;
+    font-size: 30px;
+    border: none;
+    background: #00336699;
+    cursor: pointer;
+    z-index: 1;
+    }
+
+    .slider-controls button:hover {
+      opacity: 0.5;
+    }
+/*end of slider*/
+
+/*contact section*/
+.contact-section {
+  padding: 100px 0;
+  background-color: #f7f7f7;
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button {
+  padding: 15px 30px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #3e8e41;
+}
+
+.social-media-links {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.social-media-links a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.social-media-links a:hover {
+  color: #666;
+}
+
+.contact-info {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+/*end of contact section*/
+
+/*blog*/
+.blog-section {
+  padding: 100px 0;
+  background-color: #f7f7f7;
+}
+
+.blog-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.blog-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+article {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px);
+}
+
+article h3 {
+  margin-top: 0;
+}
+
+article a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+article a:hover {
+  color: #23527c;
+}
+/*end of blog*/
+
+/*Certification*/
+.certifications-section {
+  padding: 100px 0;
+  background-color: #f7f7f7;
+}
+
+.certifications-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.certification, .award {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px);
+}
+
+.certification h3, .award h3 {
+  margin-top: 0;
+}
+
+.certification p, .award p {
+  margin-bottom: 10px;
+}
+/* end of certification*/
+
+/*contribution*/
+.open-source-contributions-section {
+  padding: 100px 0;
+  background-color: #f7f7f7;
+}
+
+.open-source-contributions-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.open-source-contributions-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contribution {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px);
+}
+
+.contribution h3 {
+  margin-top: 0;
+}
+
+.contribution p {
+  margin-bottom: 10px;
+}
+/*end of contribution*/
+
+/*engagement*/
+.speaking-engagements-section {
+  padding: 100px 0;
+  background-color: #f7f7f7;
+}
+
+.speaking-engagements-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.speaking-engagements-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.engagement {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px);
+}
+
+.engagement h3 {
+  margin-top: 0;
+}
+
+.engagement p {
+  margin-bottom: 10px;
+}
+/*end of engagement*/
+
+/*call of action*/
+.call-to-action-section {
+  padding: 100px 0;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.call-to-action-section h2 {
+  margin-bottom: 20px;
+}
+
+.call-to-action-section p {
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.cta-button:hover {
+  background-color: #3e8e41;
+}
+/*end of call of action*/
+
+/*about me*/
+.about-me-section {
+  padding: 100px 0;
+  background-color: #f7f7f7;
+}
+
+.about-me-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-me-content p {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.about-me-content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+/*end of about me*/
+
+/*footer*/
+.footer-section {
+  padding: 50px 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-links, .footer-social, .footer-copyright {
+  flex-basis: 30%;
+}
+
+.footer-links ul, .footer-social ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li, .footer-social li {
+  margin-bottom: 10px;
+}
+
+.footer-links a, .footer-social a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-social i {
+  margin-right: 10px;
+}
+
+.footer-copyright {
+  margin-top: 20px;
+}
+/*footer*/
 /*end of dropdown text*/
 @media screen and (min-width:769px) {
     .welcome-section {
@@ -857,7 +1500,38 @@ renderSwitch(holder) {
 }
 }
 
-const TopDesign =() => {
+function TopDesign() {
+  return (
+    <div>
+      {/* Top Nav Menu 
+      <nav className="main-navigation-bar">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      */}
+
+      {/* Hero Section */}
+      <section className="hero-section-container">
+        <div className="hero-section-content">
+          <div className="hero-section-profile-image-container">
+            <img src="images/profile/my_img-removebg-preview.png" alt="Your Name" className="hero-section-profile-image" />
+          </div>
+          <div className="hero-section-text-container">
+            <h1 className="hero-section-heading">Hello, I'm Your Name</h1>
+            <p className="hero-section-subheading">Software Developer with expertise in...</p>
+            <p className="hero-section-description">Building scalable, efficient, and innovative solutions.</p>
+            <button className="hero-section-cta-button">Let's Connect</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+const TopDesignOld =() => {
 
     return (
         <div>
@@ -873,8 +1547,8 @@ const TopDesign =() => {
           <hr style={{color: "#21adad"}}></hr>
 
           <div className="top-design-button-cover" style={{ textAlign: 'center', paddingTop: '20px' }}>
-        <button className="view-project" style={{paddingRight: "25px", paddingLeft: "25px"}}>Hire Me</button>
-        <button className="view-project">Download cv</button>
+        <button className="btn btn-primary hover-translate view-project" style={{paddingRight: "25px", paddingLeft: "25px"}}>Hire Me</button>
+        <button className="btn btn-primary hover-translate view-project">Download cv</button>
       </div>
             </div>
 
@@ -918,6 +1592,9 @@ staying up-to-date with industry trends and best practices.
   )
 }
 
+
+
+
 //end of navbar component
 
 const App=()=> {
@@ -959,9 +1636,10 @@ const App=()=> {
  //const id = useId();
   
 
+ //const [height, setHeight] = useState({});
+
  //let contentId;
  const [activeId, setActiveId] = useState(null);
-//const [height, setHeight] = useState({});
 
 // Close all other elements
 const closeAllElements = useCallback((id) => {
@@ -1149,6 +1827,115 @@ const ChooseDestination=()=> {
     )
 }
 
+const languagesCardsInfo = [
+    { title: "Java",
+      icon: "fa-brands fa-java",
+      id: 1,
+      keySkills: [
+        "Design patterns (e.g., Singleton, Factory)",
+        "Java Frameworks (e.g., Spring, Hibernate)",
+        "Java-based web development (e.g., Servlets, JSP)",
+    "Java-based mobile development (e.g., Android)",
+    "Java Performance Optimization",
+        "Android SDK",
+      ],
+      digitalSolution: "Proficient in Android App Development, Desktop Software Development, and Backend Development with Spring Boot",
+    },
+  { title: "JavaScript",
+      icon: "fa-brands fa-jsMix Files",
+      id: 2,
+      keySkills: [
+        "React, React Native",
+        "JavaScript (ES6+)",
+        "HTML5, CSS3",
+        "Responsive Design",
+      ],
+      digitalSolution: "Proficient in Web Development Mobile App Development with React Native",
+    },
+    { title: "HTML",
+      icon: "fa-brands fa-html5",
+      id: 3,
+      keySkills: [
+        "HTML/CSS integration",
+        "Responsive web design (RWD)",
+        "Mobile-first development",
+        "Cross-browser compatibility",
+        "Web accessibility (WCAG, Section 508)",
+      ],
+      digitalSolution: "Proficient in HTML5 Semantic Markup Accessibility Responsive Design and Microformats",
+    },
+    { title: "CSS",
+      icon: "fa-brands fa-java",
+      id: 4,
+      keySkills: [
+        "React, React Native",
+        "JavaScript (ES6+)",
+        "HTML5, CSS3",
+        "Responsive Design",
+      ],
+      digitalSolution: "Proficient in CSS3 Responsive Design, Mobile-First Development, Flexbox, Grid, and Sass/SCSS",
+    },
+    { title: "KOTLIN",
+      icon: `<img src="images/4691442_kotlin_icon.svg" className="kotlin-icon"/>`,
+      id: 5,
+      keySkills: [
+        "Android Architecture Components",
+        "oom persistence library",
+        "LiveData and ViewModel",
+        "Navigation component",
+        "Kotlin-based Android frameworks (e.g., Koin, Mosby)",
+      ],
+      digitalSolution: "Proficient in Android App Development Coroutines Flow Room Persistence, Kotlinx.serialization",
+    },
+];
+
+const LanguagesCard=()=> {
+  
+  return (
+    <div className="language-content-cover">
+      {
+        languagesCardsInfo.map((cardInfo, index) => {
+          return (
+        <div key={index} className="langauge-card java-card">
+          <p className="icon-container"><i className={cardInfo.icon}></i></p>
+          <h2>{ cardInfo.title }</h2>
+          <p>{cardInfo.digitalSolution}</p>
+     
+      <div>
+        <button
+          className={`collapsible ${isActive[cardInfo.id] ? 'active' : ''}`}
+          onClick={()=> handleToggle(cardInfo.id)}
+        >
+      <i className={clicked[cardInfo.id] ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'}></i>
+    </button>
+  </div>
+
+  <div
+    className={`language-more-text content ${activeId === cardInfo.id ? 'active' : ''}`}
+    id={cardInfo.id}
+    style={{ maxHeight: `${height[cardInfo.id]}px`, overflow: 'hidden', transition: 'max-height 0.2s ease-out' }}
+  >
+    <p>Key Skills:</p>
+    <ul>
+      
+      <li>React, React Native</li>
+      <li>JavaScript (ES6+)</li>
+      <li>HTML5, CSS3</li>
+      <li>Responsive Design</li>
+    
+    </ul>
+  </div>
+
+      <div style={{textAlign: 'center', paddingTop: '20px'}}>
+      <button className="btn btn-primary hover-translate view-project">View Projects</button>
+      </div>
+    </div>
+  )})
+  }
+  </div>
+  );
+}
+
 const JavaCard=()=> {
   
       return (
@@ -1163,7 +1950,9 @@ const JavaCard=()=> {
           className={`collapsible ${isActive[1] ? 'active' : ''}`}
           onClick={()=> handleToggle(1)}
         >
+        {
           <i className={clicked[1] ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'}></i>
+      }
         </button>
       </div>
 
@@ -1174,10 +1963,12 @@ const JavaCard=()=> {
       >
         <p>Key Skills:</p>
         <ul>
+          
           <li>React, React Native</li>
           <li>JavaScript (ES6+)</li>
           <li>HTML5, CSS3</li>
           <li>Responsive Design</li>
+        
         </ul>
       </div>
 
@@ -1587,6 +2378,15 @@ const LatestProjects = () => {
       setLightboxImage(null);
     };
 
+    const lightbox = document.querySelector('.lightbox');
+const images = document.querySelectorAll('img');
+
+images.forEach((image) => {
+  image.addEventListener('click', () => {
+    lightbox.classList.add('show');
+  });
+});
+
     return (
       <div className="latest-projects" style={{ overflow: 'hidden' }}>
         <h2>Latest Projects</h2>
@@ -1636,19 +2436,423 @@ const LatestProjects = () => {
     );
   };
 
+  function Testimonials() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [slides, setSlides] = useState([
+    {
+      id: 1,
+      text: 'Slide 1',
+      name: "Robert Smith",
+      title: "Best Service Ever",
+      message: `Tenglobal exceeded my expectations with their fast and secure money transfer service. 
+              The support team was always available and helpful. 
+              I'm so glad I chose them for my transactions - I'll never go anywhere else!" - Robert Smith`,
+  },
+  {
+      id: 2, 
+      text: 'Slide 2',
+      name: "Abel Chishonga",
+      title: "Best Service Ever",
+      message: `Secure Global Money Transfers: Protecting Your Transactions`,
+  },
+  {
+      id: 3, 
+      text: 'Slide 3' ,
+      name: "Nancy Moyo",
+      title: "Best Service Ever",
+      message: `At [Company Name], we understand the importance of 
+              secure and reliable money transfers. 
+              That's why we've implemented cutting-edge security 
+              measures to protect our clients' 
+              transactions and ensure their peace of mind`,
+  },
+  {   id: 4, 
+      text: 'Slide 4',
+      name: "Nancy Moyo",
+      title: "Best Service Ever",
+      message: `At [Company Name], we understand the importance of 
+              secure and reliable money transfers. 
+              That's why we've implemented cutting-edge security 
+              measures to protect our clients' 
+              transactions and ensure their peace of mind`,
+   },
+    { id: 5, 
+      text: 'Slide 5',
+      name: "Nancy Moyo",
+      title: "Best Service Ever",
+      message: `At [Company Name], we understand the importance of 
+              secure and reliable money transfers. 
+              That's why we've implemented cutting-edge security 
+              measures to protect our clients' 
+              transactions and ensure their peace of mind`,
+     },
+    { id: 6, text: 'Slide 6',
+      name: "Nancy Moyo",
+      title: "Best Service Ever",
+      message: `At [Company Name], we understand the importance of 
+              secure and reliable money transfers. 
+              That's why we've implemented cutting-edge security 
+              measures to protect our clients' 
+              transactions and ensure their peace of mind`,
+     },
+
+  ]);
+
+  const [isNextButtonVisible, setIsNextButtonVisible] = useState(false);
+
+  useEffect(() => {
+  const intervalId = setInterval(() => {
+    nextSlide();
+  }, 5000); // Adjust the interval time as needed
+  return () => clearInterval(intervalId);
+}, [nextSlide]);
+
+const prevSlide = () => {
+  setCurrentSlide((prevSlide) => {
+    if (prevSlide === 0) {
+      return slides.length - 1;
+    //setIsNextButtonVisible(true);
+    }
+    return prevSlide - 1;
+  });
+};
+
+const nextSlide = () => {
+  setCurrentSlide((prevSlide) => {
+    if (prevSlide === slides.length - 1) {
+      return 0;
+    //setIsNextButtonVisible(false);
+    }
+
+    return prevSlide + 1;
+  });
+};
+
+  return (
+    <div className="slider-container">
+      <div className="slider" style={{ transform: `translateX(-${currentSlide * 40}%)` }}>
+        {slides.map((slide, index) => (
+
+          <div key={slide.id} className="slider-item">
+            <div className="slider-content-cover" style={{width: "300px", height: "300px"}}>
+              
+            <img src="images/projects/Screenshot from 2024-11-20 20-24-17.png" 
+            style={{width: "50px", height: "50px"}} />
+              <div className="slider-user-icon">
+            {/*<i className="fa-solid fa-user"></i>*/}
+            </div>
+          <h2>{slide.name}</h2>
+          <div className="slider-user-message">
+            <h4>{slide.title}</h4>
+            <p>{slide.message}</p>
+          </div>
+        </div>
+
+            {
+              /*
+            <img src="images/projects/Screenshot from 2024-11-20 20-24-17.png" 
+            style={{width: "300px", height: "300px"}} />
+              */}
+            </div>
+        ))}
+      </div>
+      <div className="slider-controls">
+            <button onClick={prevSlide}><i className="fa-solid fa-arrow-left-long"></i></button>
+        <button onClick={nextSlide} style={{marginRight: "20px"}}><i className="fa-solid fa-arrow-right-long"></i></button>
+
+        {/*isNextButtonVisible ? (
+          <button onClick={nextSlide}>Next</button>
+          ) : (
+            <button onClick={prevSlide}>Prev</button>
+          )*/}
+      </div>
+    </div>
+  );
+}
+
+
+//about me
+const Contact = () => {
+  return (
+    <section id="contact" className="contact-section">
+      <h2>Get in Touch</h2>
+      <div className="contact-form">
+        <form>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <textarea placeholder="Message" />
+          <button>Send Message</button>
+        </form>
+      </div>
+      <div className="social-media-links">
+        <a href="https://www.linkedin.com/in/your-profile/" target="_blank" rel="noopener noreferrer">
+          <i className="fa-brands fa-linkedin" />
+        </a>
+        <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+          <i className="fa-brands fa-github" />
+        </a>
+        <a href="https://twitter.com/your-handle" target="_blank" rel="noopener noreferrer">
+          <i className="fa-brands fa-twitter" />
+        </a>
+      </div>
+      <div className="contact-info">
+        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>Phone: 555-555-5555 (optional)</p>
+        <p>Address: 123 Main St, Anytown, USA (optional)</p>
+      </div>
+    </section>
+  );
+};
+
+const Blog = () => {
+  return (
+    <section id="blog" className="blog-section">
+      <h2>Blog/News</h2>
+      <div className="blog-posts">
+        <article>
+          <h3>Article Title 1</h3>
+          <p>Article summary or excerpt 1</p>
+          <a href="#">Read More</a>
+        </article>
+        <article>
+          <h3>Article Title 2</h3>
+          <p>Article summary or excerpt 2</p>
+          <a href="#">Read More</a>
+        </article>
+        <article>
+          <h3>Article Title 3</h3>
+          <p>Article summary or excerpt 3</p>
+          <a href="#">Read More</a>
+        </article>
+      </div>
+    </section>
+  );
+};
+
+  const testimonailsData = [
+    {
+      name: "Robert Smith",
+      title: "Best Service Ever",
+      message: `Tenglobal exceeded my expectations with their fast and secure money transfer service. 
+              The support team was always available and helpful. 
+              I'm so glad I chose them for my transactions - I'll never go anywhere else!" - Robert Smith`,
+  },
+  {
+      name: "Abel Chishonga",
+      title: "Best Service Ever",
+      message: `Secure Global Money Transfers: Protecting Your Transactions`,
+  },
+  {
+      name: "Nancy Moyo",
+      title: "Best Service Ever",
+      message: `At [Company Name], we understand the importance of 
+              secure and reliable money transfers. 
+              That's why we've implemented cutting-edge security 
+              measures to protect our clients' 
+              transactions and ensure their peace of mind`,
+  }
+];
+
+const Certifications = () => {
+  return (
+    <section id="certifications" className="certifications-section">
+      <h2>Certifications/Awards</h2>
+      <div className="certifications-list">
+        <div className="certification">
+          <h3>AWS Certified Developer</h3>
+          <p>Awarded by Amazon Web Services</p>
+          <p>Date: 2022</p>
+        </div>
+        <div className="certification">
+          <h3>Google Cloud Certified Professional Cloud Developer</h3>
+          <p>Awarded by Google Cloud</p>
+          <p>Date: 2020</p>
+        </div>
+        <div className="award">
+          <h3>Winner of Hackathon 2022</h3>
+          <p>Organized by TechCorp</p>
+          <p>Date: 2022</p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const OpenSourceContributions = () => {
+  return (
+    <section id="open-source-contributions" className="open-source-contributions-section">
+      <h2>Open Source Contributions</h2>
+      <div className="open-source-contributions-list">
+        <div className="contribution">
+          <h3>GitHub Repository: My Awesome Project</h3>
+          <p>Contributed to the development of a scalable and efficient algorithm.</p>
+          <p><a href="https://github.com/your-username/your-repo-name" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+        </div>
+        <div className="contribution">
+          <h3>Open-Source Project: Apache Kafka</h3>
+          <p>Participated in the development of a new feature for Kafka Streams.</p>
+          <p><a href="https://kafka.apache.org/" target="_blank" rel="noopener noreferrer">Learn more about Apache Kafka</a></p>
+        </div>
+        <div className="contribution">
+          <h3>Issues Resolved: 10+ issues resolved on GitHub</h3>
+          <p>Resolved issues related to performance optimization and bug fixes.</p>
+          <p><a href="https://github.com/your-username/your-repo-name/issues" target="_blank" rel="noopener noreferrer">View issues on GitHub</a></p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const SpeakingEngagements = () => {
+  return (
+    <section id="speaking-engagements" className="speaking-engagements-section">
+      <h2>Speaking Engagements</h2>
+      <div className="speaking-engagements-list">
+        <div className="engagement">
+          <h3>Conference Talk: "The Future of Web Development"</h3>
+          <p>Delivered at the annual Web Dev Conference, 2022</p>
+          <p><a href="https://www.webdevconference.com/" target="_blank" rel="noopener noreferrer">Learn more about the conference</a></p>
+        </div>
+        <div className="engagement">
+          <h3>Meetup Presentation: "Introduction to Machine Learning"</h3>
+          <p>Presented at the Machine Learning Meetup Group, 2020</p>
+          <p><a href="https://www.meetup.com/machine-learning-group/" target="_blank" rel="noopener noreferrer">Join the meetup group</a></p>
+        </div>
+        <div className="engagement">
+          <h3>Webinar: "Best Practices for Front-end Development"</h3>
+          <p>Hosted by the Front-end Development Community, 2022</p>
+          <p><a href="https://www.frontenddevelopmentcommunity.com/" target="_blank" rel="noopener noreferrer">Learn more about the community</a></p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const AboutMe = () => {
+  return (
+    <section id="about-me" className="about-me-section">
+      <h2 style={{paddingLeft: "90px"}}>About Me</h2>
+      <div className="about-me-content">
+        <p>
+          As a seasoned software developer with a passion for innovative technologies, 
+          I specialize in building scalable, efficient, and user-friendly applications.
+        </p>
+        <p>
+          With over 10 years of experience in the industry, I have had the privilege of 
+          working with various technologies and collaborating with talented individuals 
+          from diverse backgrounds.
+        </p>
+        <p>
+          My personal mission is to leverage my skills and expertise to deliver exceptional 
+          solutions that exceed client expectations and contribute to the growth and 
+          success of the organizations I work with.
+        </p>
+        <h3>Personal Story</h3>
+        <p>
+          Born and raised in a family of innovators, I was exposed to the world of 
+          technology from a young age. This early exposure sparked my curiosity and 
+          fueled my passion for coding.
+        </p>
+        <h3>Professional Mission Statement</h3>
+        <p>
+          As a dedicated and results-driven software developer, my mission is to design, 
+          develop, and deliver high-quality software solutions that meet the highest 
+          standards of excellence and exceed client expectations.
+        </p>
+      </div>
+    </section>
+  );
+};
+
+
+const Footer = () => {
+  return (
+    <footer className="footer-section">
+      <div className="footer-container">
+        <div className="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div className="footer-social">
+          <h3>Follow Me</h3>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/your-profile/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin" /></a></li>
+            <li><a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-github" /></a></li>
+            <li><a href="https://twitter.com/your-handle" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter" /></a></li>
+          </ul>
+        </div>
+        <div className="footer-copyright">
+          <p style={{fontSize: "10px"}}>&copy; 2024 T.E Netshisaulu. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+  const TestimonialsDemo =()=> {
+
+    //React slick
+    const [items, setItems] = useState([
+        { id: 1, text: 'Item 1' },
+        { id: 2, text: 'Item 2' },
+        { id: 3, text: 'Item 3' },
+      ]);
+
+      const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+      };
+
+      //end of react slick
+
+    return (
+      <div className="testimonials-outer-layer">
+     <h3 style={{textAlign: "center"}}>What our clients saying about us</h3>
+     <button id="scroll-left" className="testimonials-button"><i className="fa-solid fa-arrow-left-long"></i></button>
+        <button id="scroll-right" className="testimonials-button"><i className="fa-solid fa-arrow-right-long"></i></button>
+      <div className="container testimonials-container" id="testimonials-container">
+
+        {
+          testimonailsData.map((testimonial, index) => {
+            return (
+              <section key={index} className="section testimonials" id="testimonials">
+          <div className="home-icon">
+            <i className="fa-solid fa-user"></i></div>
+          <h2>{testimonial.name}</h2>
+          <div className="subsection">
+            <h4>{testimonial.title}</h4>
+            <p>{testimonial.message}</p>
+          </div>
+        </section>
+            )
+          })
+        }
+
+      </div>
+      </div>
+
+    )
+  }
+
 const SkillsIntroduction =()=> {
     return (
         <div>
 
             <section className="language-section">
       <h3>LANGAUES</h3>
-      <div className="language-content-cover">
-        <JavaCard />
-        <JavaScriptCard />
-        <CSSCard />
-        <HTMLCard />
-        <KotlinCard />
-          </div>
+      
+        <LanguagesCard />
+          
           </section>
 
           <section>
@@ -1664,6 +2868,14 @@ const SkillsIntroduction =()=> {
             <section>
               <LatestProjects />
               </section>
+
+              <Testimonials />
+              <Contact />
+              <Blog />
+              <Certifications />
+
+              <OpenSourceContributions />
+              <SpeakingEngagements />
 
         <section className="welcome-section">
       <h3>Building innovative solutions.</h3>
@@ -1705,12 +2917,13 @@ const ConfirmFinalPage=()=> {
  
  //end of pages Components
     return (
+      <div>
         <div style={{textAlign: "center"}}>
             <div className="top-hearder">
               <IconComponent />
               <Navbar />
               <div className="top-hearder-item-container">
-              <TopDesignProfile />
+        
               <TopDesign />
               </div>
             </div>
@@ -1758,6 +2971,9 @@ const ConfirmFinalPage=()=> {
             }
         </div>
         <button style={{margin: "5px"}} onClick={()=>nextPage()}>Increment</button>
+        </div>
+        <AboutMe />
+        <Footer />
         </div>
     )
 }
