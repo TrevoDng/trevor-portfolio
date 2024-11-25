@@ -284,33 +284,47 @@
 }
 
 .hero-section-container {
-  background-color: #f7f7f7;
+  position: relative;
+  background-color: #1a7e7e; /*#0aa5d4;*/
   padding: 5em 0;
 }
 
-.hero-section-content {
-  max-width: 1200px;
+.hero-section-content-container {
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 5px;
 }
 
-.hero-section-profile-image-container {
-  flex-basis: 50%;
+.hero-section-content { 
+  flex-basis: 48%;
+  width: 10%;
+  background-color: #1a7e7e;
+
+}
+
+.hero-image-container {
+  background-color: rgba(153, 205, 50, 0);
+  
 }
 
 .hero-section-profile-image {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
-  border-radius: 50%;
+  /* /*border-radius: 50%; */
   margin: 20px auto;
 }
 
 .hero-section-text-container {
-  flex-basis: 50%;
+  
+}
+
+.hero-section-text-container p {
+  font-family: 10px;
 }
 
 .hero-section-heading {
@@ -337,9 +351,36 @@
   cursor: pointer;
 }
 
+/*to design hexagon*/
+.hexagon {
+  position: relative;
+  width: auto;
+  height: auto;
+  /*background-image: url('image.png');*/
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: #1a8d8d;
+}
+
+.hexagon:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 120px;
+  height: 120px;
+  background-color: transparent;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transform: scale(1.1);
+  z-index: -1;
+  border: 2px solid #21adad;
+}
+/*end of hexagon*/
+
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero-section-profile-image-container, .hero-section-text-container {
+  .hero-image-container, .hero-section-text-container {
     flex-basis: 100%;
   }
   
@@ -395,6 +436,10 @@
 
 .langauge-card h2 {
   color: #022046;
+}
+
+.langauge-card p {
+  font-size: 12px;
 }
 
 .portfolio-headings {
@@ -547,6 +592,7 @@ margin: 20px;
   margin: auto;
   width: 80%;
   border: 3px solid #21adad;
+  border-radius: 5px;
   padding: 10px;
 }
 
@@ -877,7 +923,7 @@ margin: 20px;
       flex: 0 0 250px; /* Set a fixed width for each testimonial */
       margin: 10px;
       padding: 20px;
-      border: 1px solid #000000;
+      border: 2px solid #000000;
       border-radius: 10px;
       max-width: 250px;
      /*
@@ -933,7 +979,7 @@ margin: 20px;
     .slider-item {
       width: 100%;
       height: 100%;
-      background-color: #f2f2f2;
+      background-color: #f2f2f200;
       padding-top: 50px;
       /*display: flex;
       justify-content: center;
@@ -943,7 +989,7 @@ margin: 20px;
 
     .slider-content-cover {
       position: relative;
-      border: 1px solid #000;
+      border: 5px solid #21adad;
       border-radius: 10px;
       background-color: #21adad00;
       padding: 20px;
@@ -955,10 +1001,10 @@ margin: 20px;
       border: 5px solid;
       border-radius: 50px;
       border-top-color: #ff69b400;
-  border-right-color: #21adad;
-  border-bottom-color: #6666cc00;
-  border-left-color: #21adad;
-  border-radius: 50px;
+      border-right-color: #21adad;
+      border-bottom-color: #6666cc00;
+      border-left-color: #21adad;
+      border-radius: 50px;
     }
 
     .slider-content-cover p {
@@ -991,7 +1037,7 @@ margin: 20px;
 
 /*contact section*/
 .contact-section {
-  padding: 100px 0;
+  padding: 10px 0;
   background-color: #f7f7f7;
 }
 
@@ -1006,7 +1052,9 @@ margin: 20px;
 }
 
 .contact-form input, .contact-form textarea {
+  position: relative;
   width: 100%;
+  box-sizing: border-box;
   padding: 15px;
   margin-bottom: 20px;
   border: none;
@@ -1014,17 +1062,48 @@ margin: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none;
+  border: 1px solid #21adad; /* Change this color to your desired color */
+  box-shadow: none;
+}
+
+.name-email-align {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  align-items: flex-end; /* Add this line */
+}
+
+.name-email-align input {
+  flex: 1; /* Adjust the width to account for the gap */
+}
+
 .contact-form button {
-  padding: 15px 30px;
-  background-color: #4CAF50;
-  color: #fff;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: bolder;
+  background-color: #21adad;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.527);
+  transition: transform 0.2s ease-in-out;
 }
 
 .contact-form button:hover {
-  background-color: #3e8e41;
+  background-color: #1a7e7e;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form button:active {
+  transform: translateY(5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .social-media-links {
@@ -1054,13 +1133,15 @@ margin: 20px;
 
 /*blog*/
 .blog-section {
-  padding: 100px 0;
+  padding: 10px 0;
   background-color: #f7f7f7;
 }
 
 .blog-section h2 {
   text-align: center;
   margin-bottom: 50px;
+  padding: 10px;
+  font-size: 20px;
 }
 
 .blog-posts {
@@ -1070,31 +1151,79 @@ margin: 20px;
 }
 
 article {
-  background-color: #fff;
+  position: relative;
+  background-image: url('images/blog/Screenshot from 2024-11-23 10-00-43.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 20px;
   margin: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: calc(33.33% - 20px);
+  width: calc(33.33% - 60px);
+  min-height: 130px;
+}
+
+article .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #041414f6;
+  transition: height 0.5s ease-in-out;
+  pointer-events: auto;
+}
+
+.overlay h3, .overlay p, .overlay a {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1;
+}
+
+article:hover .overlay {
+  height: 100%;
 }
 
 article h3 {
   margin-top: 0;
+  margin-bottom: 0;
+  color: #f9f9f9;
+  padding: 20px;
+  font-weight: lighter;
 }
 
 article a {
   text-decoration: none;
   color: #337ab7;
+  cursor: pointer;
+  font-size: 12px;
+  z-index: 2;
+}
+
+article p {
+  margin-top: 0;
+  color: #f7f7f7;
+  font-size: 10px;
+  z-index: 1;
 }
 
 article a:hover {
   color: #23527c;
 }
+
+article:hover .overlay h3, 
+article:hover .overlay p, 
+article:hover .overlay a {
+  opacity: 1;
+  z-index: 1;
+}
+
 /*end of blog*/
 
 /*Certification*/
 .certifications-section {
-  padding: 100px 0;
-  background-color: #f7f7f7;
+  padding: 10px 0;
+  background-color: #ffffff;
 }
 
 .certifications-section h2 {
@@ -1123,11 +1252,42 @@ article a:hover {
 .certification p, .award p {
   margin-bottom: 10px;
 }
+
+/**/
+.certifications-section {
+  background-color: #f7f7f7; /* light gray background */
+}
+
+.certifications-section h2 {
+  color: #21adad; /* keep the main color for the heading */
+}
+
+.certification {
+  background-color: #dff0d8; /* light greenish background */
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.certification h3 {
+  color: #3e8e41; /* darker greenish color for certification titles */
+}
+
+.award {
+  background-color: #ffe6cc; /* light orangeish background */
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.award h3 {
+  color: #ffa07a; /* darker orangeish color for award titles */
+}
 /* end of certification*/
 
 /*contribution*/
 .open-source-contributions-section {
-  padding: 100px 0;
+  padding: 10px 0;
   background-color: #f7f7f7;
 }
 
@@ -1161,8 +1321,8 @@ article a:hover {
 
 /*engagement*/
 .speaking-engagements-section {
-  padding: 100px 0;
-  background-color: #f7f7f7;
+  padding: 10px 0;
+  background-color: #ffffff;
 }
 
 .speaking-engagements-section h2 {
@@ -1195,7 +1355,7 @@ article a:hover {
 
 /*call of action*/
 .call-to-action-section {
-  padding: 100px 0;
+  padding: 10px 0;
   background-color: #f7f7f7;
   text-align: center;
 }
@@ -1231,12 +1391,12 @@ article a:hover {
 
 /*about me*/
 .about-me-section {
-  padding: 100px 0;
+  padding: 10px 0;
   background-color: #f7f7f7;
 }
 
 .about-me-content {
-  max-width: 800px;
+  max-width: auto;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -1249,6 +1409,53 @@ article a:hover {
 .about-me-content h3 {
   font-size: 24px;
   margin-bottom: 10px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #007bff;
+}
+
+.about-container ul {
+  color: #fff;
+  background-color: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-container ul li {
+  color: #023b5c;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+/*
+.about-container .about-image {
+  width: 30%;
+  margin-right: 20px;
+  margin: auto;
+}
+*/
+
+.about-image-cover {
+  background-image: linear-gradient(rgb(0, 20, 34), rgba(1, 20, 26, 0.144)), url('images/blog/Screenshot from 2024-11-23 10-00-43.png');
+  display: grid;
+  place-items: center;
+  height: auto; 
+  background-color: #1a7e7e;
+  width: 100%;
+}
+
+.div-container img {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
 }
 /*end of about me*/
 
@@ -1294,6 +1501,7 @@ article a:hover {
 .footer-copyright {
   margin-top: 20px;
 }
+
 /*footer*/
 /*end of dropdown text*/
 @media screen and (min-width:769px) {
@@ -1312,7 +1520,13 @@ article a:hover {
     .language-content-cover {
 
     }
+
+
+    .about-container ul {
+      max-width: 300px;
+    }
 }
+
 @media screen and (max-width:769px) {
     .top-hearder {
         display: flex;
@@ -1391,6 +1605,10 @@ article a:hover {
 .project-left-a-cover {
   display: none;
 }
+
+.contact-form {
+  width: 95%;
+}
   
 }
 
@@ -1458,7 +1676,7 @@ renderSwitch(holder) {
     
     <nav className='main-nav-bar'>
     <a to="/" className="author-name"> 
-    <span>T.E NETSHISAULU</span>
+    <span style={{color: "#015c5c"}}>T.E<span style={{color: "e3e3e3"}}>NETSHISAULU</span></span>
     </a>
 
   <div className='nav-list'>
@@ -1501,6 +1719,49 @@ renderSwitch(holder) {
 }
 
 function TopDesign() {
+
+  const [text, setText] = useState('');
+  const typingTexts = [
+    'Website Application Developer',
+    'Android Application Developer.',
+    'Desktop Application Developer.'
+  ];
+  const [index, setIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [delay, setDelay] = useState(null);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (delay !== null) {
+        setDelay(null);
+      } else if (!isDeleting) {
+        if (charIndex < typingTexts[index].length) {
+          setText(typingTexts[index].substring(0, charIndex + 1).split('').map((char, i) => i === charIndex ? `|${char}` : char).join(''));
+          setCharIndex(charIndex + 1);
+        } else {
+          setDelay(true);
+          setTimeout(() => {
+            setIsDeleting(true);
+          }, 2000);
+        }
+      } else {
+        if (charIndex > 0) {
+          setText(typingTexts[index].substring(0, charIndex - 1).split('').map((char, i) => i === charIndex - 1 ? `|${char}` : char).join(''));
+          setCharIndex(charIndex - 1);
+        } else {
+          setIsDeleting(false);
+          setIndex((index + 1) % typingTexts.length);
+          setCharIndex(0);
+        }
+      }
+    }, 50);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [index, charIndex, isDeleting, delay, typingTexts]);
+
   return (
     <div>
       {/* Top Nav Menu 
@@ -1515,15 +1776,27 @@ function TopDesign() {
 
       {/* Hero Section */}
       <section className="hero-section-container">
-        <div className="hero-section-content">
-          <div className="hero-section-profile-image-container">
-            <img src="images/profile/my_img-removebg-preview.png" alt="Your Name" className="hero-section-profile-image" />
+        <div className="hero-section-content-container">
+          <div className="hero-section-content hero-image-container">
+            <div className="hexagon">
+            <img src="images/my_img-removebg-preview.png" alt="Your Name" className="hero-section-profile-image" />
           </div>
-          <div className="hero-section-text-container">
-            <h1 className="hero-section-heading">Hello, I'm Your Name</h1>
-            <p className="hero-section-subheading">Software Developer with expertise in...</p>
+            </div>
+          <div className="hero-section-content hero-section-text-container">
+            <p className="hero-section-subheading">Hi there, I am...</p>
+            <h1 className="hero-section-heading" 
+              style={{fontSize: "18px", color: "#21adad", 
+              backgroundColor: "#333",
+              border: "none",
+              borderRadius: "5px",
+              padding: "20px"}}>
+              <span style={{color: "#fff"}}>A</span> {text}</h1>
             <p className="hero-section-description">Building scalable, efficient, and innovative solutions.</p>
-            <button className="hero-section-cta-button">Let's Connect</button>
+            <hr style={{color: "#21adad"}}></hr>
+          <div className="top-design-button-cover" style={{ textAlign: 'center'}}>
+        <button className="btn btn-primary hover-translate view-project" style={{paddingRight: "25px", paddingLeft: "25px"}}>Hire Me</button>
+        <button className="btn btn-primary hover-translate view-project">Download cv</button>
+        </div>
           </div>
         </div>
       </section>
@@ -1568,25 +1841,24 @@ return (
 )
 }
 
-const IntroDesign =() => {
-
-return (
+const AboutMySelf =() => {
+  return (
     <div>
-        <div className="intro-design-cover">
-          {/*About Me
-
-    Professional profile picture
-    Brief bio (2-3 paragraphs)
-    Relevant experience (work, education, certifications)
-    Contact information (email, LinkedIn, Twitter)*/}
-      <h1>About me</h1>
-      <p>My name is <b>Trevor Elelelwani Netshisaulu.</b> Highly motivated and detail-oriented software developer with a 
-        strong passion for building innovative solutions.</p>  
-      <p>Proven ability to work independently and collaboratively, 
-with a track record of delivering high-quality projects on time. Committed to
-staying up-to-date with industry trends and best practices.
+        <div className="intro-design-cover" style={{backgroundColor: "#21adad"}}>
+      <h1 style={{color: "#333"}}>ABOUT ME</h1>
+      <p className="about-container" style={{textAlign: "left"}}>
+        <ul>
+      <li><strong>Languages: </strong>JavaScript, Java, Kottlin, CSS</li>
+      <li><strong>Technologies: </strong>React, React Native, Bootstrap, Nodejs, Spring Boot, MongoDB</li>
+      <li><strong>Experience: </strong>Full-stack developer with experience in building scalable and efficient applications</li>
+      <li><strong>Education: </strong> Bachelor's degree in Computer Science</li>
+      <li><strong>Skills: </strong> Problem-solving, teamwork, communication</li>
+    </ul>
+    <div class="about-image-cover">
+        <img style={{width: "300px", height: "300px"}} src="images/profile/my_img-removebg-preview.png"/>
+    </div>
         </p>
-    
+
         </div>
     </div>
   )
@@ -1596,7 +1868,6 @@ staying up-to-date with industry trends and best practices.
 
 
 //end of navbar component
-
 const App=()=> {
  const [pageState, setPageState] = useState(0);
  
@@ -1829,7 +2100,7 @@ const ChooseDestination=()=> {
 
 const languagesCardsInfo = [
     { title: "Java",
-      icon: "fa-brands fa-java",
+      icon: <i className="fa-brands fa-java"></i>,
       id: 1,
       keySkills: [
         "Design patterns (e.g., Singleton, Factory)",
@@ -1842,7 +2113,7 @@ const languagesCardsInfo = [
       digitalSolution: "Proficient in Android App Development, Desktop Software Development, and Backend Development with Spring Boot",
     },
   { title: "JavaScript",
-      icon: "fa-brands fa-jsMix Files",
+      icon: <i class="fa-brands fa-js"></i>,
       id: 2,
       keySkills: [
         "React, React Native",
@@ -1853,7 +2124,7 @@ const languagesCardsInfo = [
       digitalSolution: "Proficient in Web Development Mobile App Development with React Native",
     },
     { title: "HTML",
-      icon: "fa-brands fa-html5",
+      icon: <i className="fa-brands fa-html5"></i>,
       id: 3,
       keySkills: [
         "HTML/CSS integration",
@@ -1865,7 +2136,7 @@ const languagesCardsInfo = [
       digitalSolution: "Proficient in HTML5 Semantic Markup Accessibility Responsive Design and Microformats",
     },
     { title: "CSS",
-      icon: "fa-brands fa-java",
+      icon: <i className="fa-brands fa-java"></i>,
       id: 4,
       keySkills: [
         "React, React Native",
@@ -1876,7 +2147,7 @@ const languagesCardsInfo = [
       digitalSolution: "Proficient in CSS3 Responsive Design, Mobile-First Development, Flexbox, Grid, and Sass/SCSS",
     },
     { title: "KOTLIN",
-      icon: `<img src="images/4691442_kotlin_icon.svg" className="kotlin-icon"/>`,
+      icon: <img src="images/4691442_kotlin_icon.svg" className="kotlin-icon"/>,
       id: 5,
       keySkills: [
         "Android Architecture Components",
@@ -1897,7 +2168,7 @@ const LanguagesCard=()=> {
         languagesCardsInfo.map((cardInfo, index) => {
           return (
         <div key={index} className="langauge-card java-card">
-          <p className="icon-container"><i className={cardInfo.icon}></i></p>
+          <p className="icon-container">{ cardInfo.icon }</p>
           <h2>{ cardInfo.title }</h2>
           <p>{cardInfo.digitalSolution}</p>
      
@@ -1936,212 +2207,7 @@ const LanguagesCard=()=> {
   );
 }
 
-const JavaCard=()=> {
-  
-      return (
-        <div className="langauge-card java-card">
-          <p className="icon-container"><i className="fa-brands fa-java"></i></p>
-          <h2>Java</h2>
-          <p>Proficient in Android App Development, Desktop Software Development, and Backend Development with Spring Boot</p>
-         
-          
-      <div>
-        <button
-          className={`collapsible ${isActive[1] ? 'active' : ''}`}
-          onClick={()=> handleToggle(1)}
-        >
-        {
-          <i className={clicked[1] ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'}></i>
-      }
-        </button>
-      </div>
-
-      <div
-        className={`language-more-text content ${activeId === 1 ? 'active' : ''}`}
-        id={1}
-        style={{ maxHeight: `${height[1]}px`, overflow: 'hidden', transition: 'max-height 0.2s ease-out' }}
-      >
-        <p>Key Skills:</p>
-        <ul>
-          
-          <li>React, React Native</li>
-          <li>JavaScript (ES6+)</li>
-          <li>HTML5, CSS3</li>
-          <li>Responsive Design</li>
-        
-        </ul>
-      </div>
-
-          <div style={{textAlign: 'center', paddingTop: '20px'}}>
-          <button className="btn btn-primary hover-translate view-project">View Projects</button>
-          </div>
-        </div>
-      );
-    }
-
-function JavaScriptCard() {
-
-  return (
-    <div className="langauge-card javascript-card">
-      <p className="icon-container"><i className="fa-brands fa-js"></i></p>
-      <h2>JavaScript</h2>
-      <p>Proficient in Web Development
-        Mobile App Development with React Native
-      </p>
-      <div>
-        <button
-          className={`collapsible ${isActive[2] ? 'active' : ''}`}
-          onClick={()=> handleToggle(2)}
-        >
-          <i className={clicked[2] ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'}></i>
-        </button>
-      </div>
-
-      <div
-        className={`language-more-text content ${activeId === 2 ? 'active' : ''}`}
-        id={2}
-        style={{ maxHeight: `${height[2]}px`, overflow: 'hidden', transition: 'max-height 0.2s ease-out' }}
-      >
-        <p>Key Skills:</p>
-        <ul>
-          <li>React, React Native</li>
-          <li>JavaScript (ES6+)</li>
-          <li>HTML5, CSS3</li>
-          <li>Responsive Design</li>
-        </ul>
-      </div>
-      <div style={{ textAlign: 'center', paddingTop: '20px' }}>
-        <button className="btn btn-primary hover-translate view-project">View Projects</button>
-      </div>
-    </div>
-  );
-}
-
-    function CSSCard() {
-      return (
-        <div className="langauge-card css-card">
-          <p className="icon-container"><i className="fa-brands fa-js"></i></p>
-          <h2>CSS</h2>
-          <p>Proficient in CSS3 Responsive Design, Mobile-First Development,
-            Flexbox, Grid, and Bootstrap Tailwind CSS
-          </p>
-
-
-      <div>
-        <button
-          className={`collapsible ${isActive[3] ? 'active' : ''}`}
-          onClick={()=> handleToggle(3)}
-        >
-          <i className={clicked[3] ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'}></i>
-        </button>
-      </div>
-
-      <div
-        className={`language-more-text content ${activeId === 3 ? 'active' : ''}`}
-        id={3}
-        style={{ maxHeight: `${height[3]}px`, overflow: 'hidden', transition: 'max-height 0.2s ease-out' }}
-      >
-        
-          <p>Key Skills:</p>
-          <ul>
-            <li>Layouts</li>
-            <li>Styling</li>
-            <li>Animation</li>
-            <li>Transitions</li>
-          </ul>
-      </div>
-          
-          <div style={{textAlign: 'center', paddingTop: '20px'}}>
-          <button className="btn btn-primary hover-translate view-project">View Projects</button>
-          </div>
-        </div>
-      );
-    }
-
-    function HTMLCard() {
-      return (
-        <div className="langauge-card html-card">
-          <p className="icon-container"><i className="fa-brands fa-html5"></i></p>
-          <h2>HTML</h2>
-          <p>Proficient in HTML5 Semantic Markup Accessibility Responsive Design and Microformats
-          </p>
-
-
-      <div>
-        <button
-          className={`collapsible ${isActive[4] ? 'active' : ''}`}
-          onClick={()=> handleToggle(4)}
-        >
-          <i className={clicked[4] ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'}></i>
-        </button>
-      </div>
-
-      <div
-        className={`language-more-text content ${activeId === 4 ? 'active' : ''}`}
-        id={4}
-        style={{ maxHeight: `${height[4]}px`, overflow: 'hidden', transition: 'max-height 0.2s ease-out' }}
-      >  
-          <p>Key Skills:</p>
-          <ul>
-            <li>Structuring Content</li>
-            <li>Form Validation</li>
-            <li>Audio/Video Embedding</li>
-            <li>Canvas and SVG</li>
-          </ul>
-      </div>
-
-          
-          <div style={{textAlign: 'center', paddingTop: '20px'}}>
-          <button className="btn btn-primary hover-translate view-project">View Projects</button>
-          </div>
-        </div>
-      );
-    }
-
-    function KotlinCard() {
-      return (
-        <div className="langauge-card kotlin-card">
-          <p className="icon-container"><img src="images/4691442_kotlin_icon.svg" className="kotlin-icon"/></p>
-          <h2>Kotlin</h2>
-          <p>Proficient in 
-            Android App Development
-            Coroutines
-            Flow
-            Room Persistence
-            Kotlinx.serialization</p>
-
-
-      <div>
-        <button
-          className={`collapsible ${isActive[5] ? 'active' : ''}`}
-          onClick={()=> handleToggle(5)}
-        >
-          <i className={clicked[5] ? 'fa-solid fa-caret-up' : 'fa-solid fa-caret-down'}></i>
-        </button>
-      </div>
-
-      <div
-        className={`language-more-text content ${activeId === 5 ? 'active' : ''}`}
-        id={5}
-        style={{ maxHeight: `${height[5]}px`, overflow: 'hidden', transition: 'max-height 0.2s ease-out' }}
-      >
-          <p>Key Skills:</p>
-          <ul>
-            <li>Android Studio</li>
-            <li>Gradle</li>
-            <li>Kotlin Extensions</li>
-            <li>Null Safety</li>
-          </ul>
-      </div>
-    
-          <div style={{textAlign: 'center', paddingTop: '20px'}}>
-          <button className="btn btn-primary hover-translate view-project">View Projects</button>
-          </div>
-        </div>
-      );
-    }
-
-    const Introduction =()=> {
+    const DigitalSolutions =()=> {
 
       return (
         <section className="intro-content-cover technology-cover" id="technology-cover">
@@ -2256,52 +2322,6 @@ const LibraryGraph = () => {
   );
 };
 
-/*
-const projects = [
-  { name: 'React', level: 80 },
-  { name: 'Springboot', level: 90 },
-  { name: 'Nodejs', level: 85 },
-  { name: 'Bootstrap', level: 60 },
-  { name: 'React Native', level: 40 }
-];
-
-const Projects = () => {
-  return (
-    <div className="language-graph">
-      <h4 class="language-proficiency portfolio-headings">LIBRARIE PROFICIENCY</h4>
-      {projects.map((project, index) => (
-        <div key={index} className="language-bar">
-          <span className="language-name">{project.name}</span>
-          <div className="language-level" style={{ width: `${project.level}%` }}>
-            <span className="language-name">{`${project.level}%`}</span>
-            </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-*/
-
-/*
-const LatestProjects = () => {
-  return (
-    <div>
-      <h2>Latest Projects</h2>
-      <ul>
-        <li>
-          <a href="project1-url">Project 1</a>
-        </li>
-        <li>
-          <a href="project2-url">Project 2</a>
-        </li>
-        <li>
-          <a href="project3-url">Project 3</a>
-        </li>
-      </ul>
-    </div>
-  );
-};
-*/
 
 const projects = [
   {
@@ -2393,7 +2413,7 @@ images.forEach((image) => {
         {projects.map((project) => (
           <div key={project.id} className="project">
             <div className="project-left">
-              <h3>{project.name}</h3>
+              <h3 style={{color: "#21adad"}}>{project.name}</h3>
               <p>
                 <strong>Technologies:</strong> {project.languages.join(', ')}
               </p>
@@ -2444,56 +2464,45 @@ images.forEach((image) => {
       text: 'Slide 1',
       name: "Robert Smith",
       title: "Best Service Ever",
-      message: `Tenglobal exceeded my expectations with their fast and secure money transfer service. 
-              The support team was always available and helpful. 
-              I'm so glad I chose them for my transactions - I'll never go anywhere else!" - Robert Smith`,
+      message: `We were struggling to find a developer who could create a desktop 
+                app that met our specific needs. Luckily, we found you! Your attention 
+                to detail and expertise in desktop app development are impressive. 
+                Thanks for a great experience!" - Rachel Patel, IT Manager of MedCare Inc`,
   },
   {
       id: 2, 
       text: 'Slide 2',
       name: "Abel Chishonga",
       title: "Best Service Ever",
-      message: `Secure Global Money Transfers: Protecting Your Transactions`,
+      message: `We needed a website that would showcase our brand and services 
+                in a modern and professional way. You delivered! Our new website 
+                is stunning, and we've received countless compliments from clients 
+                and prospects. Thanks for your creativity and 
+                technical expertise!" - Karen Thompson, Marketing Manager of Luxe Hotels`,
   },
   {
       id: 3, 
       text: 'Slide 3' ,
       name: "Nancy Moyo",
       title: "Best Service Ever",
-      message: `At [Company Name], we understand the importance of 
-              secure and reliable money transfers. 
-              That's why we've implemented cutting-edge security 
-              measures to protect our clients' 
-              transactions and ensure their peace of mind`,
+      message: `Your Android app development skills are top-notch! You delivered a high-quality app that met all our requirements and exceeded our expectations. We can't wait to work with you again!" - David Lee, CTO of FitnessPro`,
   },
   {   id: 4, 
       text: 'Slide 4',
       name: "Nancy Moyo",
       title: "Best Service Ever",
-      message: `At [Company Name], we understand the importance of 
-              secure and reliable money transfers. 
-              That's why we've implemented cutting-edge security 
-              measures to protect our clients' 
-              transactions and ensure their peace of mind`,
+      message: `We were blown away by the Android app you created for our company! The user interface is sleek and intuitive, and the features are exactly what we needed. Thanks for a job well done!" - Emily Chen, CEO of GreenTech Inc.`,
    },
     { id: 5, 
       text: 'Slide 5',
       name: "Nancy Moyo",
       title: "Best Service Ever",
-      message: `At [Company Name], we understand the importance of 
-              secure and reliable money transfers. 
-              That's why we've implemented cutting-edge security 
-              measures to protect our clients' 
-              transactions and ensure their peace of mind`,
+      message: `We've worked with several developers in the past, but none have impressed us as much as you. Your professionalism, expertise, and communication skills are top-notch. We look forward to continuing our partnership with you!" - Sarah Taylor, CTO of NovaTech Inc.`,
      },
     { id: 6, text: 'Slide 6',
       name: "Nancy Moyo",
       title: "Best Service Ever",
-      message: `At [Company Name], we understand the importance of 
-              secure and reliable money transfers. 
-              That's why we've implemented cutting-edge security 
-              measures to protect our clients' 
-              transactions and ensure their peace of mind`,
+      message: `Your website development skills are exceptional! You took the time to understand our business goals and created a website that perfectly aligns with our brand. We're thrilled with the result and appreciate your dedication to excellence!" - James Kim, CEO of Korea Foods Inc.`,
      },
 
   ]);
@@ -2529,7 +2538,10 @@ const nextSlide = () => {
 };
 
   return (
+    <div>
+      <h2 style={{color: "#21adad"}}>Testimonials</h2>
     <div className="slider-container">
+
       <div className="slider" style={{ transform: `translateX(-${currentSlide * 40}%)` }}>
         {slides.map((slide, index) => (
 
@@ -2541,7 +2553,7 @@ const nextSlide = () => {
               <div className="slider-user-icon">
             {/*<i className="fa-solid fa-user"></i>*/}
             </div>
-          <h2>{slide.name}</h2>
+          <h2 style={{color: "#21adad"}}>{slide.name}</h2>
           <div className="slider-user-message">
             <h4>{slide.title}</h4>
             <p>{slide.message}</p>
@@ -2567,6 +2579,7 @@ const nextSlide = () => {
           )*/}
       </div>
     </div>
+    </div>
   );
 }
 
@@ -2575,11 +2588,14 @@ const nextSlide = () => {
 const Contact = () => {
   return (
     <section id="contact" className="contact-section">
-      <h2>Get in Touch</h2>
+      <h2 style={{color: "#21adad"}}>Get in Touch</h2>
       <div className="contact-form">
         <form>
+          <div className="name-email-align">
           <input type="text" placeholder="Name" />
           <input type="email" placeholder="Email" />
+          </div>
+          <input type="text" placeholder="Subject" />
           <textarea placeholder="Message" />
           <button>Send Message</button>
         </form>
@@ -2604,26 +2620,41 @@ const Contact = () => {
   );
 };
 
+const blogData = [
+  {
+    title: "Creating a Reducer in Vanilla JavaScript",
+    summary: "Read the full article below.",
+    link: ""
+
+},
+{
+    title: "Working with JWT and Node.js: A Comprehensive Guide",
+    summary: "Read the full article below.",
+    link: ""
+
+},
+{
+    title: "Managing State with React Reducers",
+    summary: "Read the full article below.",
+    link: ""
+
+}
+]
+
 const Blog = () => {
   return (
     <section id="blog" className="blog-section">
-      <h2>Blog/News</h2>
+      <h2 style={{color: "#21adad"}}>Blog/News</h2>
       <div className="blog-posts">
-        <article>
-          <h3>Article Title 1</h3>
-          <p>Article summary or excerpt 1</p>
-          <a href="#">Read More</a>
-        </article>
-        <article>
-          <h3>Article Title 2</h3>
-          <p>Article summary or excerpt 2</p>
-          <a href="#">Read More</a>
-        </article>
-        <article>
-          <h3>Article Title 3</h3>
-          <p>Article summary or excerpt 3</p>
-          <a href="#">Read More</a>
-        </article>
+        {blogData.map((blog, index) => (
+          <article key={index}>
+            <div className="overlay">
+            <h3>{blog.title}</h3>
+            <p>{blog.summary}</p>
+            <a href={blog.link}>Read More</a>
+              </div>
+          </article>
+        ))}
       </div>
     </section>
   );
@@ -2656,7 +2687,7 @@ const Blog = () => {
 const Certifications = () => {
   return (
     <section id="certifications" className="certifications-section">
-      <h2>Certifications/Awards</h2>
+      <h2 style={{color: "#21adad"}}>Certifications/Awards</h2>
       <div className="certifications-list">
         <div className="certification">
           <h3>AWS Certified Developer</h3>
@@ -2681,7 +2712,7 @@ const Certifications = () => {
 const OpenSourceContributions = () => {
   return (
     <section id="open-source-contributions" className="open-source-contributions-section">
-      <h2>Open Source Contributions</h2>
+      <h2 style={{color: "#21adad"}}>Open Source Contributions</h2>
       <div className="open-source-contributions-list">
         <div className="contribution">
           <h3>GitHub Repository: My Awesome Project</h3>
@@ -2706,7 +2737,7 @@ const OpenSourceContributions = () => {
 const SpeakingEngagements = () => {
   return (
     <section id="speaking-engagements" className="speaking-engagements-section">
-      <h2>Speaking Engagements</h2>
+      <h2 style={{color: "#21adad"}}>Speaking Engagements</h2>
       <div className="speaking-engagements-list">
         <div className="engagement">
           <h3>Conference Talk: "The Future of Web Development"</h3>
@@ -2731,7 +2762,7 @@ const SpeakingEngagements = () => {
 const AboutMe = () => {
   return (
     <section id="about-me" className="about-me-section">
-      <h2 style={{paddingLeft: "90px"}}>About Me</h2>
+      <h2 style={{paddingLeft: "90px", color: "#21adad"}}>About Me</h2>
       <div className="about-me-content">
         <p>
           As a seasoned software developer with a passion for innovative technologies, 
@@ -2764,6 +2795,55 @@ const AboutMe = () => {
   );
 };
 
+function AutoText() {
+  const [text, setText] = useState('');
+  const typingTexts = [
+    'Hello, I am a software developer.',
+    'I specialize in building scalable and efficient applications.',
+    'I am passionate about innovative technologies and collaborative development.'
+  ];
+  const [index, setIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [delay, setDelay] = useState(null);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (delay !== null) {
+        setDelay(null);
+      } else if (!isDeleting) {
+        if (charIndex < typingTexts[index].length) {
+          setText(typingTexts[index].substring(0, charIndex + 1));
+          setCharIndex(charIndex + 1);
+        } else {
+          setDelay(true);
+          setTimeout(() => {
+            setIsDeleting(true);
+          }, 2000);
+        }
+      } else {
+        if (charIndex > 0) {
+          setText(typingTexts[index].substring(0, charIndex - 1));
+          setCharIndex(charIndex - 1);
+        } else {
+          setIsDeleting(false);
+          setIndex((index + 1) % typingTexts.length);
+          setCharIndex(0);
+        }
+      }
+    }, 50);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [index, charIndex, isDeleting, delay, typingTexts]);
+
+  return (
+    <div>
+      <p>Text: {text}</p>
+    </div>
+  );
+}
 
 const Footer = () => {
   return (
@@ -2849,7 +2929,7 @@ const SkillsIntroduction =()=> {
         <div>
 
             <section className="language-section">
-      <h3>LANGAUES</h3>
+      <h3 style={{color: "#21adad"}}>LANGAUES</h3>
       
         <LanguagesCard />
           
@@ -2870,13 +2950,13 @@ const SkillsIntroduction =()=> {
               </section>
 
               <Testimonials />
-              <Contact />
               <Blog />
               <Certifications />
 
               <OpenSourceContributions />
               <SpeakingEngagements />
-
+              <AutoText />
+              <Contact />
         <section className="welcome-section">
       <h3>Building innovative solutions.</h3>
           <p className="welcome-section-p">
@@ -2927,16 +3007,20 @@ const ConfirmFinalPage=()=> {
               <TopDesign />
               </div>
             </div>
-            <IntroDesign />
-            {/*backgroundColor: "#21adad23"*/}
+
+            <div>
+            <AboutMySelf />  
+            </div>
+
             <div className="portfolio-introduction" style={{padding: "10px 5px 100px 5px"}}>
-              <h4 style={{margin: "10px 5px 40px 5px"}}>Digital Solutions</h4>
-              <Introduction />  
+              <h4 style={{margin: "30px 5px 40px 5px", color: "#21adad" /*"#022046"*/}}>Digital Solutions</h4>
+              <DigitalSolutions />  
             </div>
             
             <div className="skills-intro-section">
                 <SkillsIntroduction />
             </div>
+            {/*
         <h3>How to switch page in React</h3>
         <p>page - {pageState + 1}</p>
         <br />
@@ -2969,9 +3053,12 @@ const ConfirmFinalPage=()=> {
                     <ConfirmFinalPage />
                 : null
             }
+
         </div>
         <button style={{margin: "5px"}} onClick={()=>nextPage()}>Increment</button>
+      */}
         </div>
+
         <AboutMe />
         <Footer />
         </div>
