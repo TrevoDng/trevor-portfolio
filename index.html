@@ -376,7 +376,6 @@
   z-index: -1;
   border: 2px solid #21adad;
 }
-/*end of hexagon*/
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -411,6 +410,11 @@
 .welcome-section {
     padding: 5px 50px 5px 50px;
     background-color:#c6c6c79f;
+    border-left: 5px solid #21adad;
+}
+
+.welcome-section p {
+  font-size: 14px;
 }
 
 .language-section {
@@ -1039,6 +1043,7 @@ margin: 20px;
 .contact-section {
   padding: 10px 0;
   background-color: #f7f7f7;
+  border-top: 2px solid #21adad;
 }
 
 .contact-section h2 {
@@ -1151,6 +1156,7 @@ margin: 20px;
 }
 
 article {
+  background-color: #21adad;
   position: relative;
   background-image: url('images/blog/Screenshot from 2024-11-23 10-00-43.png');
   background-size: contain;
@@ -1260,28 +1266,35 @@ article:hover .overlay a {
 
 .certifications-section h2 {
   color: #21adad; /* keep the main color for the heading */
+  margin-bottom: 10px;
 }
 
 .certification {
-  background-color: #dff0d8; /* light greenish background */
+  background-color: #f0f0f0; /*#2cb39179;*/ /* light greenish background */
   padding: 20px;
   border: 1px solid #ddd;
   margin-bottom: 20px;
 }
 
 .certification h3 {
-  color: #3e8e41; /* darker greenish color for certification titles */
+  color: #21adad; /*#3e8e41;*/ /* darker greenish color for certification titles */
+  font-size: 16px;
+}
+
+.certification p {
+  font-size: 12px;
 }
 
 .award {
-  background-color: #ffe6cc; /* light orangeish background */
+  background-color: #48adad65; /* light orangeish background */
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   margin-bottom: 20px;
 }
 
 .award h3 {
-  color: #ffa07a; /* darker orangeish color for award titles */
+  color: #177777; /* darker orangeish color for award titles */
+  font-size: 16px;
 }
 /* end of certification*/
 
@@ -1317,6 +1330,112 @@ article:hover .overlay a {
 .contribution p {
   margin-bottom: 10px;
 }
+
+/*new contribution css*/
+.contribution-section i {
+    color: gray;
+    text-shadow:2px 2px 4px #000000;
+}
+ .contribution-content-cover {
+    margin: 10px;
+    padding: 2px 0 0 0;
+    border: 2px solid #21adad;
+    border-right: 5px solid #21adad;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #717272;
+    background-color: #ffffff;
+    min-width: 300px;
+ }
+ .contribution-content-cover i {
+     font-size: 50px;
+     color: linear-gradient(to bottom, #03b7ff, tomato, #000 100%);
+     /* #FF9E03;*/
+     float: right;
+ }
+ 
+ .more-info-container {
+  position: relative;
+  margin-bottom: 0px;
+  padding: 0;
+  /*border: 5px solid red;*/
+  border-radius: 10px;
+  background-color: #21adad;
+}
+
+.more-info-container h3 {
+  position: absolute;
+  color: #1a7e7e;
+  max-width: 250px;
+  margin: 0;
+  top: 10px;
+  left: 13px;
+  font-size: 18px;
+}
+
+.more-info-container p {
+  position: absolute;
+  top: 50px;
+  left:12px;
+  color: gray;
+  font-size: 12px;
+  margin: 0 100px 0 0;
+}
+
+.more-info-container a {
+  position: absolute;
+  top: 90px;
+  left: -10px;
+  font-size: 12px;
+  color: #21adad;
+  margin-left: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  /*box-shadow:2px 2px 4px #000000;*/
+}
+
+.more-info-container i {
+  position: absolute;
+  font-size: 30px;
+  right: 5px;
+  top: 100px;
+  color: #fff;
+  text-shadow:2px 2px 4px #000000;
+}
+
+
+.more-info-container svg {
+ position: absolute;
+  font-size: 70px;
+  right: 10px;
+  top: 70px;
+  color: #e3e3e3;
+  text-shadow:2px 2px 4px #000000;
+  margin: 0;
+  padding: 5px;
+  background-color: red;
+}
+
+.more-info-container #incons-cover {
+    position: absolute;
+    font-size: 70px;
+    right: 10px;
+    top: 70px;
+    color: red;
+    padding: 2px;
+    margin: 0;
+    height: 55px;
+    width: 55px;
+    box-shadow: 2px 2px 4px #000000;
+}
+
+.more-info {
+  top: 0;
+  background-color: #21adad;
+  border-right: 80px solid transparent;
+  border-left: 0px solid transparent;
+  border-top: 150px solid #ffffff;
+}
 /*end of contribution*/
 
 /*engagement*/
@@ -1350,6 +1469,7 @@ article:hover .overlay a {
 
 .engagement p {
   margin-bottom: 10px;
+  font-size: 12px;
 }
 /*end of engagement*/
 
@@ -1609,7 +1729,27 @@ article:hover .overlay a {
 .contact-form {
   width: 95%;
 }
-  
+
+article {
+    width: 80%; /* increase width to 80% of parent */
+    margin: 20px auto; /* center horizontally */
+  }
+
+  .certifications-list {
+    flex-direction: column;
+    align-items: center;
+}
+
+.certification {
+  width: 80%;
+  margin: 20px;
+  padding: 20px;
+
+  /*width: 30%;*/
+  margin: 20px;
+  padding: 20px;
+  vertical-align: top;
+}
 }
 
 @media screen and (min-width: 1340px) {
@@ -2169,7 +2309,7 @@ const LanguagesCard=()=> {
           return (
         <div key={index} className="langauge-card java-card">
           <p className="icon-container">{ cardInfo.icon }</p>
-          <h2>{ cardInfo.title }</h2>
+          <h2 style={{fontSize: "12px"}}>{ cardInfo.title }</h2>
           <p>{cardInfo.digitalSolution}</p>
      
       <div>
@@ -2243,7 +2383,8 @@ const LanguagesCard=()=> {
 const LanguageGraph = () => {
   return (
     <div className="language-graph">
-      <h4 className="language-proficiency portfolio-headings">LANGUAGE PROFICIENCY</h4>
+      <h4 className="language-proficiency portfolio-headings"
+      style={{color: "#177777"}}>LANGUAGE PROFICIENCY</h4>
       {languages.map((language, index) => (
         <div key={index} className="language-bar">
           <span className="language-name">{language.name}</span>
@@ -2309,7 +2450,8 @@ const libraries = [
 const LibraryGraph = () => {
   return (
     <div className="language-graph">
-      <h4 className="language-proficiency portfolio-headings">LIBRARIE PROFICIENCY</h4>
+      <h4 className="language-proficiency portfolio-headings"
+      style={{color: "#177777"}}>LIBRARIE PROFICIENCY</h4>
       {libraries.map((librarie, index) => (
         <div key={index} className="language-bar">
           <span className="language-name">{librarie.name}</span>
@@ -2350,34 +2492,6 @@ const projects = [
   },
 ];
 
-/*
-const LatestProjects = () => {
-  return (
-    <div className="latest-projects">
-      <h2>Latest Projects</h2>
-      {projects.map((project) => (
-        <div key={project.id} className="project">
-          <div className="project-left">
-            <h3>{project.name}</h3>
-            <p>
-              <strong>Technologies:</strong> {project.languages.join(', ')}
-            </p>
-            <p>
-              <strong>Purpose:</strong> {project.purpose}
-            </p>
-            <a href={project.url} target="_blank" rel="noopener noreferrer">
-              Visit Project
-            </a>
-          </div>
-          <div className="project-right">
-            <img src={project.image} alt={project.name} />
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-*/
 
 const LatestProjects = () => {
     const [lightboxImage, setLightboxImage] = React.useState(null);
@@ -2413,7 +2527,7 @@ images.forEach((image) => {
         {projects.map((project) => (
           <div key={project.id} className="project">
             <div className="project-left">
-              <h3 style={{color: "#21adad"}}>{project.name}</h3>
+              <h3 style={{color: "#177777"}}>{project.name}</h3>
               <p>
                 <strong>Technologies:</strong> {project.languages.join(', ')}
               </p>
@@ -2539,7 +2653,7 @@ const nextSlide = () => {
 
   return (
     <div>
-      <h2 style={{color: "#21adad"}}>Testimonials</h2>
+      <h2 style={{color: "#177777"}}>Testimonials</h2>
     <div className="slider-container">
 
       <div className="slider" style={{ transform: `translateX(-${currentSlide * 40}%)` }}>
@@ -2588,7 +2702,7 @@ const nextSlide = () => {
 const Contact = () => {
   return (
     <section id="contact" className="contact-section">
-      <h2 style={{color: "#21adad"}}>Get in Touch</h2>
+      <h2 style={{color: "#177777"}}>Get in Touch</h2>
       <div className="contact-form">
         <form>
           <div className="name-email-align">
@@ -2601,20 +2715,24 @@ const Contact = () => {
         </form>
       </div>
       <div className="social-media-links">
-        <a href="https://www.linkedin.com/in/your-profile/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/trevor-elelwani-netshisaulu-537905115/" target="_blank" rel="noopener noreferrer">
           <i className="fa-brands fa-linkedin" />
         </a>
-        <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/TrevoDng" target="_blank" rel="noopener noreferrer">
           <i className="fa-brands fa-github" />
         </a>
-        <a href="https://twitter.com/your-handle" target="_blank" rel="noopener noreferrer">
+        <a href="https://x.com/travah1" target="_blank" rel="noopener noreferrer">
           <i className="fa-brands fa-twitter" />
         </a>
       </div>
-      <div className="contact-info">
-        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-        <p>Phone: 555-555-5555 (optional)</p>
-        <p>Address: 123 Main St, Anytown, USA (optional)</p>
+      <div className="contact-info" 
+      style={{backgroundColor: "#21adad15", 
+              margin: "0px", fontSize: "12px",
+              padding: "20px"}}>
+        <p>Email: <a href="mailto:your-email@example.com"
+          style={{color: "#21adad"}}>trevor279@live.com</a></p>
+        <p>Phone: 066 575 0985</p>
+        <p>Address: 123 Main St, Johannesburg, SouthAfrica</p>
       </div>
     </section>
   );
@@ -2644,7 +2762,7 @@ const blogData = [
 const Blog = () => {
   return (
     <section id="blog" className="blog-section">
-      <h2 style={{color: "#21adad"}}>Blog/News</h2>
+      <h2 style={{color: "#177777"}}>Blog/News</h2>
       <div className="blog-posts">
         {blogData.map((blog, index) => (
           <article key={index}>
@@ -2687,7 +2805,7 @@ const Blog = () => {
 const Certifications = () => {
   return (
     <section id="certifications" className="certifications-section">
-      <h2 style={{color: "#21adad"}}>Certifications/Awards</h2>
+      <h2 style={{color: "#177777"}}>Certifications/Awards</h2>
       <div className="certifications-list">
         <div className="certification">
           <h3>AWS Certified Developer</h3>
@@ -2709,26 +2827,74 @@ const Certifications = () => {
   );
 };
 
+const openSourceData = [
+  {
+    title: "GitHub Repository: My Awesome Project",
+    description: "Contributed to the development of a scalable and efficient algorithm.",
+    link: "https://github.com/TrevoDng/your-repo-name",
+    source: "GitHub",
+    icon: <i class="fa-brands fa-github"></i>,
+  },
+  {
+    title: "Open-Source Project: Apache Kafka",
+    description: "Participated in the development of a new feature for Kafka Streams.",
+    link: "https://kafka.apache.org/",
+    source: "Apache Kafka",
+    icon: <i class={"data.icon"}></i>,
+  },
+  {
+    title: "Issues Resolved: 10+ issues resolved on GitHub",
+    description: "Resolved issues related to performance optimization and bug fixes.",
+    link: "https://github.com/TrevoDng/your-repo-name/issues",
+    source: "GitHub",
+    icon: <i class="fa-brands fa-github"></i>,
+  }
+]
+
 const OpenSourceContributions = () => {
   return (
     <section id="open-source-contributions" className="open-source-contributions-section">
-      <h2 style={{color: "#21adad"}}>Open Source Contributions</h2>
+      <h2 style={{color: "#177777"}}>Open Source Contributions</h2>
       <div className="open-source-contributions-list">
+
+        {openSourceData.map((data, index)=> (
+          <div key={{index}} class="contribution-content-cover">
+          <div class="more-info-container">
+          <h3 style={{fontSize: "14px"}}>{data.title}</h3>
+          <p style={{textAlign: "left"}}>{data.description}</p>
+          <a href={data.link}>Explorer</a>
+            {data.icon}
+            <div class="more-info"></div>
+          </div>
+        </div>
+        ))}
+
+        {/*
         <div className="contribution">
-          <h3>GitHub Repository: My Awesome Project</h3>
-          <p>Contributed to the development of a scalable and efficient algorithm.</p>
-          <p><a href="https://github.com/your-username/your-repo-name" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+          <h3 style={{color: "#21adad", fontSize: "16px"}}>GitHub Repository: My Awesome Project</h3>
+          <p style={{fontSize: "14px"}}>Contributed to the development of a scalable and efficient algorithm.</p>
+          <p style={{fontSize: "14px"}}><a href="https://github.com/your-username/your-repo-name" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{color: "#21adad"}}>View on GitHub</a></p>
         </div>
         <div className="contribution">
-          <h3>Open-Source Project: Apache Kafka</h3>
-          <p>Participated in the development of a new feature for Kafka Streams.</p>
-          <p><a href="https://kafka.apache.org/" target="_blank" rel="noopener noreferrer">Learn more about Apache Kafka</a></p>
+          <h3 style={{color: "#21adad",fontSize: "16px"}}>Open-Source Project: Apache Kafka</h3>
+          <p style={{fontSize: "14px"}}>Participated in the development of a new feature for Kafka Streams.</p>
+          <p style={{fontSize: "14px"}}><a href="https://kafka.apache.org/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{color: "#21adad"}}>Learn more about Apache Kafka</a></p>
         </div>
         <div className="contribution">
-          <h3>Issues Resolved: 10+ issues resolved on GitHub</h3>
-          <p>Resolved issues related to performance optimization and bug fixes.</p>
-          <p><a href="https://github.com/your-username/your-repo-name/issues" target="_blank" rel="noopener noreferrer">View issues on GitHub</a></p>
+          <h3 style={{color: "#21adad", fontSize: "16px"}}>Issues Resolved: 10+ issues resolved on GitHub</h3>
+          <p style={{fontSize: "14px"}}>Resolved issues related to performance optimization and bug fixes.</p>
+          <p style={{fontSize: "14px"}}><a href="https://github.com/your-username/your-repo-name/issues" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{color: "#21adad"}}>View issues on GitHub</a></p>
         </div>
+      */}
       </div>
     </section>
   );
@@ -2737,22 +2903,33 @@ const OpenSourceContributions = () => {
 const SpeakingEngagements = () => {
   return (
     <section id="speaking-engagements" className="speaking-engagements-section">
-      <h2 style={{color: "#21adad"}}>Speaking Engagements</h2>
+      <h2 style={{color: "#177777", marginBottom: "10px"}}>Speaking Engagements</h2>
       <div className="speaking-engagements-list">
-        <div className="engagement">
-          <h3>Conference Talk: "The Future of Web Development"</h3>
+        <div className="engagement"
+        style={{borderRadius: "10px"}}>
+          <h3 style={{color: "#21adad" ,fontSize: "16px"}}>Conference Talk: "The Future of Web Development"</h3>
           <p>Delivered at the annual Web Dev Conference, 2022</p>
-          <p><a href="https://www.webdevconference.com/" target="_blank" rel="noopener noreferrer">Learn more about the conference</a></p>
+          <p><a href="https://www.webdevconference.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{color: "#21adad" ,fontSize: "14px"}}>Learn more about the conference</a></p>
         </div>
-        <div className="engagement">
-          <h3>Meetup Presentation: "Introduction to Machine Learning"</h3>
+        <div className="engagement" 
+        style={{borderRadius: "10px"}}>
+          <h3 style={{color: "#21adad" ,fontSize: "16px"}}>Meetup Presentation: "Introduction to Machine Learning"</h3>
           <p>Presented at the Machine Learning Meetup Group, 2020</p>
-          <p><a href="https://www.meetup.com/machine-learning-group/" target="_blank" rel="noopener noreferrer">Join the meetup group</a></p>
+          <p><a href="https://www.meetup.com/machine-learning-group/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{color: "#21adad" ,fontSize: "14px"}}>Join the meetup group</a></p>
         </div>
-        <div className="engagement">
-          <h3>Webinar: "Best Practices for Front-end Development"</h3>
+        <div className="engagement" 
+        style={{borderRadius: "10px"}}>
+          <h3 style={{color: "#21adad" ,fontSize: "16px"}}>Webinar: "Best Practices for Front-end Development"</h3>
           <p>Hosted by the Front-end Development Community, 2022</p>
-          <p><a href="https://www.frontenddevelopmentcommunity.com/" target="_blank" rel="noopener noreferrer">Learn more about the community</a></p>
+          <p><a href="https://www.frontenddevelopmentcommunity.com/" 
+            target="_blank" rel="noopener noreferrer"
+            style={{color: "#21adad" ,fontSize: "14px"}}>Learn more about the community</a></p>
         </div>
       </div>
     </section>
@@ -2762,8 +2939,9 @@ const SpeakingEngagements = () => {
 const AboutMe = () => {
   return (
     <section id="about-me" className="about-me-section">
-      <h2 style={{paddingLeft: "90px", color: "#21adad"}}>About Me</h2>
       <div className="about-me-content">
+
+      <h2 style={{color: "#177777"}}>About Me</h2>
         <p>
           As a seasoned software developer with a passion for innovative technologies, 
           I specialize in building scalable, efficient, and user-friendly applications.
@@ -2778,13 +2956,13 @@ const AboutMe = () => {
           solutions that exceed client expectations and contribute to the growth and 
           success of the organizations I work with.
         </p>
-        <h3>Personal Story</h3>
+        <h3 style={{color: "#177777"}}>Personal Story</h3>
         <p>
           Born and raised in a family of innovators, I was exposed to the world of 
           technology from a young age. This early exposure sparked my curiosity and 
           fueled my passion for coding.
         </p>
-        <h3>Professional Mission Statement</h3>
+        <h3 style={{color: "#177777"}}>Professional Mission Statement</h3>
         <p>
           As a dedicated and results-driven software developer, my mission is to design, 
           develop, and deliver high-quality software solutions that meet the highest 
@@ -2958,13 +3136,12 @@ const SkillsIntroduction =()=> {
               <AutoText />
               <Contact />
         <section className="welcome-section">
-      <h3>Building innovative solutions.</h3>
+      <h3 style={{color: "#177777"}}>Building innovative solutions.</h3>
           <p className="welcome-section-p">
-          This portfolio showcases my expertise in programming, highlighting projects 
-          and accomplishments that demonstrate my passion for coding.</p>
+          This portfolio showcases my expertise in programming, highlighting <a style={{color: "#015c5c", cursor: "pointer"}}> projects</a> and accomplishments that demonstrate my passion for coding.</p>
           <p className="welcome-section-p2">Transforming Ideas into Reality through Code</p>
 
-          <h4>Brief overview</h4>
+          <h4 style={{color: "#177777"}}>Brief overview</h4>
             <p>
           Highly motivated and detail-oriented programmer with 10+ years of experience in 
           developing scalable and efficient software solutions. Proficient in languages 
@@ -3013,7 +3190,7 @@ const ConfirmFinalPage=()=> {
             </div>
 
             <div className="portfolio-introduction" style={{padding: "10px 5px 100px 5px"}}>
-              <h4 style={{margin: "30px 5px 40px 5px", color: "#21adad" /*"#022046"*/}}>Digital Solutions</h4>
+              <h4 style={{margin: "30px 5px 40px 5px", color: "#177777" /*"#022046"*/}}>Digital Solutions</h4>
               <DigitalSolutions />  
             </div>
             
