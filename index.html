@@ -46,6 +46,8 @@
 
         body {
           letter-spacing: 0.5px;
+          margin: 0;
+          padding: 0;
         }
 
         #profileImage {
@@ -1824,25 +1826,24 @@ renderSwitch(holder) {
     className={this.state.clicked ? 
       "#navbar active" : "#navbar"}>
       <li>
-        <a id="home-a-tag" to='/homecontent' className='active home-a-tag'>
-          Home
+        <a id="home-a-tag" href="#blog" className='active home-a-tag'>
+          Blog
         </a>
         </li>
       <li>
-      <a to="/aboutus">Services</a></li>
+      <a href="#services">Services</a></li>
 
       <li>
-      <a to="/contactus">Studies</a></li>
-      
+      <a href="#certifications">Studies</a></li>
+      <li>
+        <a href="#projects">Projects</a>
+        </li>
         <li>
-            <a to="/statement">About</a>
+            <a href="#about-me">About</a>
           </li>
           <li>
-        <a to="/useraccount">Hire</a>
+        <a href="#contact">Contact</a>
         </li>    
-        <li>
-        <a to="/homecontent"></a>
-        </li>
     </ul>
   </div>
 
@@ -2962,7 +2963,7 @@ const SpeakingEngagements = () => {
       <h2 style={{color: "#177777", marginBottom: "10px"}}>Speaking Engagements</h2>
       <div className="speaking-engagements-list">
         <div className="engagement"
-        style={{borderRadius: "10px"}}>
+        style={{borderRadius: "5px"}}>
           <h3 style={{color: "#21adad" ,fontSize: "16px"}}>Conference Talk: "The Future of Web Development"</h3>
           <p>Delivered at the annual Web Dev Conference, 2022</p>
           <p><a href="https://www.webdevconference.com/" 
@@ -3179,7 +3180,7 @@ const SkillsIntroduction =()=> {
           <LibraryGraph />
             </section>
 
-            <section>
+            <section id="projects">
               <LatestProjects />
               </section>
 
@@ -3245,7 +3246,7 @@ const ConfirmFinalPage=()=> {
             <AboutMySelf />  
             </div>
 
-            <div className="portfolio-introduction" style={{padding: "10px 5px 100px 5px"}}>
+            <div className="portfolio-introduction" id="services" style={{padding: "10px 5px 100px 5px"}}>
               <h4 style={{margin: "30px 5px 40px 5px", color: "#177777" /*"#022046"*/}}>Digital Solutions</h4>
               <DigitalSolutions />  
             </div>
