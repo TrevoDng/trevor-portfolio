@@ -82,25 +82,6 @@
         }
         /*end of topnav*/
 
-    .top-hearder {
-        position: relative;
-        background-color: #21adad1a;
-        height: auto;
-    }
-
-    .top-hearder-item-container {
-      /*
-      display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 40px;
-        */
-    }
-
-    .top-hearder-item {
-      
-    }
-
         /* start topnave*/
     .main-nav-bar {
             display: flex;
@@ -199,6 +180,25 @@
      border: none;
      border-radius: 10px;
  }
+
+ .top-hearder {
+        position: relative;
+        background-color: #21adad1a;
+        height: auto;
+    }
+
+    .top-hearder-item-container {
+      
+      display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+        
+    }
+
+    .top-hearder-item {
+      
+    }
  
  .top-design h1 {
      font-size: 18px;
@@ -1945,12 +1945,62 @@ function TopDesign() {
 }
 
 const TopDesignOld =() => {
+  const [text, setText] = useState('');
+const typingTexts = [
+  'Website Application Developer',
+  'Android Application Developer.',
+  'Desktop Application Developer.'
+];
+
+const [index, setIndex] = useState(0);
+const [charIndex, setCharIndex] = useState(0);
+const [isDeleting, setIsDeleting] = useState(false);
+const [delay, setDelay] = useState(null);
+const [speed, setSpeed] = useState(10); // adjust this value to change the speed
+
+useEffect(() => {
+  const intervalId = setInterval(() => {
+    if (delay !== null) {
+      setDelay(null);
+    } else if (!isDeleting) {
+      if (charIndex < typingTexts[index].length) {
+        setText(typingTexts[index].substring(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+      } else {
+        setDelay(true);
+        setTimeout(() => {
+          setIsDeleting(true);
+        }, 2000);
+      }
+    } else {
+      if (charIndex > 0) {
+        setText(typingTexts[index].substring(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+      } else {
+        setIsDeleting(false);
+        setIndex((index + 1) % typingTexts.length);
+        setCharIndex(0);
+      }
+    }
+  }, (1000 / speed * 100) / 100); // divide 1000 by speed to achieve smooth effect
+
+  return () => {
+    clearInterval(intervalId);
+  };
+}, [index, charIndex, isDeleting, delay, typingTexts, speed]);
 
     return (
         <div>
             <div className="top-hearder-item top-design">
             <p>Hi there, I am </p>
-         <h1>Web, Mobile & Desktop Application Developer</h1>
+            <h1 className="hero-section-heading" 
+              style={{
+                fontSize: "16px", color: "#21adad", 
+                backgroundColor: "#21adad2a",
+                border: "none",
+                borderRadius: "5px",
+                padding: "10px"}}>
+              <span style={{color: "#21adad2b"}}>A</span> {text}</h1>
           <p style={{marginBottom: "50px"}}>
             Full-Stack Developer & Digital Solutions Expert.
             Explore my programming journey and
@@ -1976,7 +2026,7 @@ return (
     <div>
         <div className="top-hearder-item top-design-profile">
       <img src="images/my_img-removebg-preview.png" />
-      <p>T.E NETSHISAULU - Tech Architect</p></div>
+      <p>Tech Architect</p></div>
     </div>
 )
 }
@@ -3180,8 +3230,8 @@ const ConfirmFinalPage=()=> {
               <IconComponent />
               <Navbar />
               <div className="top-hearder-item-container">
-        
-              <TopDesign />
+                <TopDesignProfile />
+              <TopDesignOld />
               </div>
             </div>
 
