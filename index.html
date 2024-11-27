@@ -2289,7 +2289,7 @@ const ChooseDestination=()=> {
 }
 
 const languagesCardsInfo = [
-    { title: "Java",
+    { title: "JAVA",
       icon: <i className="fa-brands fa-java"></i>,
       id: 1,
       keySkills: [
@@ -2302,7 +2302,7 @@ const languagesCardsInfo = [
       ],
       digitalSolution: "Proficient in Android App Development, Desktop Software Development, and Backend Development with Spring Boot",
     },
-  { title: "JavaScript",
+  { title: "JAVASCRIPT",
       icon: <i class="fa-brands fa-js"></i>,
       id: 2,
       keySkills: [
@@ -2359,11 +2359,17 @@ const LanguagesCard=()=> {
           return (
         <div key={index} className="langauge-card java-card">
           <p className="icon-container">{ cardInfo.icon }</p>
-          <h2 style={{fontSize: "12px"}}>{ cardInfo.title }</h2>
+          <h2 style={{fontSize: "14px"}}>{ cardInfo.title }</h2>
           <p>{cardInfo.digitalSolution}</p>
      
-      <div>
+      <div style={{margin: "0px", 
+                  padding: "0px"
+      }}>
         <button
+          style={{margin: "0px",
+            padding: "0px",
+            fontSize: "14px"
+          }}
           className={`collapsible ${isActive[cardInfo.id] ? 'active' : ''}`}
           onClick={()=> handleToggle(cardInfo.id)}
         >
@@ -3089,9 +3095,9 @@ const Footer = () => {
         <div className="footer-social">
           <h3>Follow Me</h3>
           <ul>
-            <li><a href="https://www.linkedin.com/in/your-profile/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin" /></a></li>
-            <li><a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-github" /></a></li>
-            <li><a href="https://twitter.com/your-handle" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter" /></a></li>
+            <li><a href="https://www.linkedin.com/in/trevor-elelwani-netshisaulu-537905115/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin" /></a></li>
+            <li><a href="https://github.com/TrevoDng" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-github" /></a></li>
+            <li><a href="https://x.com/travah1" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter" /></a></li>
           </ul>
         </div>
         <div className="footer-copyright">
