@@ -2758,7 +2758,10 @@ const nextSlide = () => {
 //about me
 const Contact = () => {
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className="contact-section" 
+    style={{marginBottom: "0px", 
+    padding: "0px",
+    backgroundColor: ""}}>
       <h2 style={{color: "#177777"}}>Get in Touch</h2>
       <div className="contact-form">
         <form>
@@ -2771,7 +2774,8 @@ const Contact = () => {
           <button>Send Message</button>
         </form>
       </div>
-      <div className="social-media-links">
+      <div className="social-media-links" 
+      style={{marginBottom:'10px'}}>
         <a href="https://www.linkedin.com/in/trevor-elelwani-netshisaulu-537905115/" target="_blank" rel="noopener noreferrer">
           <i className="fa-brands fa-linkedin" />
         </a>
@@ -2788,7 +2792,7 @@ const Contact = () => {
               padding: "20px"}}>
         <p>Email: <a href="mailto:your-email@example.com"
           style={{color: "#21adad"}}>trevor279@live.com</a></p>
-        <p>Phone: 066 575 0985</p>
+        <p>Phone: +27 66 575 0985</p>
         <p>Address: 123 Main St, Johannesburg, SouthAfrica</p>
       </div>
     </section>
@@ -3192,10 +3196,12 @@ const SkillsIntroduction =()=> {
               <SpeakingEngagements />
               <AutoText />
               <Contact />
-        <section className="welcome-section">
+        <section className="welcome-section" 
+        style={{marginTop: "0px"}}>
       <h3 style={{color: "#177777"}}>Building innovative solutions.</h3>
           <p className="welcome-section-p">
-          This portfolio showcases my expertise in programming, highlighting <a style={{color: "#015c5c", cursor: "pointer"}}> projects</a> and accomplishments that demonstrate my passion for coding.</p>
+          This portfolio showcases my expertise in programming, highlighting <a style={{color: "#015c5c", 
+          cursor: "pointer", textDecoration: 'underline'}}> projects</a> and accomplishments that demonstrate my passion for coding.</p>
           <p className="welcome-section-p2">Transforming Ideas into Reality through Code</p>
 
           <h4 style={{color: "#177777"}}>Brief overview</h4>
