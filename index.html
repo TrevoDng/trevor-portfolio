@@ -1590,6 +1590,17 @@ article:hover .overlay a {
   background-color: #1a7e7e;
   width: 100%;
   */
+  height: auto; 
+  border: none; 
+  background-color: brown;
+}
+
+.about-image-cover img {
+  width: 300px; 
+  height: 100%; 
+  mask-repeat: true;
+   border: none; 
+  object-fit: cover;
 }
 
 .div-container img {
@@ -1727,6 +1738,13 @@ article:hover .overlay a {
     margin-bottom: 0;
   }
 
+  .about-image-cover {
+    width: 50%;
+  }
+
+  .about-image-cover img {
+
+  }
   .project {
     flex-direction: column;
   }
@@ -2088,10 +2106,9 @@ const AboutMySelf =() => {
       <li><strong>Education: </strong> Bachelor's degree in Computer Science</li>
       <li><strong>Skills: </strong> Problem-solving, teamwork, communication</li>
     </ul>
-    <div class="about-image-cover" style={{width: "310px", height: "auto", border: "none", backgroundColor: "brown"}}>
+    <div class="about-image-cover">
       {
         <img 
-        style={{width: "300px", height: "100%", repeat: "true", border: "none", objectFit: "cover"}} 
         src="images/profile/trevor.jpg"/>
       }
         </div>
