@@ -160,11 +160,13 @@ html {
 
 #mobile {
     display: none;
+  padding: 5px;
+  margin: -10px;
+  margin-right: 5px;
 }
 
 #mobile:hover {
   border: 1px solid #21adad;
-  padding: 5px;
   border-radius: 5px;
 }
 
@@ -450,8 +452,8 @@ html {
     border-radius: 10px;
     text-align: center;
     min-width: 235px;
-    /*box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    background-color: #0a618a3f;*/
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    /*background-color: #0a618a3f;*/
 }
 
 .langauge-card h2 {
@@ -1155,7 +1157,7 @@ margin: 20px;
 /*blog*/
 .blog-section {
   padding: 10px 0;
-  background-color: #f7f7f7;
+  background-color: #5f636309;
 }
 
 .blog-section h2 {
@@ -1245,7 +1247,7 @@ article:hover .overlay a {
 /*Certification*/
 .certifications-section {
   padding: 10px 0;
-  background-color: #ffffff;
+  background-color: #817e7e;
 }
 
 .certifications-section h2 {
@@ -1260,7 +1262,7 @@ article:hover .overlay a {
 }
 
 .certification, .award {
-  background-color: #fff;
+  background-color: #dfdfdf;
   padding: 20px;
   margin: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -1277,7 +1279,7 @@ article:hover .overlay a {
 
 /**/
 .certifications-section {
-  background-color: #f7f7f7; /* light gray background */
+  background-color: #ffffff; /* light gray background */
 }
 
 .certifications-section h2 {
@@ -1286,7 +1288,7 @@ article:hover .overlay a {
 }
 
 .certification {
-  background-color: #f0f0f0; /*#2cb39179;*/ /* light greenish background */
+  background-color: #ebeaea; /*#2cb39179;*/ /* light greenish background */
   padding: 20px;
   border: 1px solid #ddd;
   margin-bottom: 20px;
@@ -1528,7 +1530,7 @@ article:hover .overlay a {
 /*about me*/
 .about-me-section {
   padding: 10px 0;
-  background-color: #f7f7f7;
+  background-color: #c0bcbc;
 }
 
 .about-me-content {
@@ -1577,12 +1579,13 @@ article:hover .overlay a {
 */
 
 .about-image-cover {
-  background-image: linear-gradient(rgb(0, 20, 34), rgba(1, 20, 26, 0.144)), url('images/profile/trevor.jpg');
+  /*background-image: linear-gradient(rgb(0, 20, 34), rgba(1, 20, 26, 0.144)), url('images/profile/trevor.jpg');
   display: grid;
   place-items: center;
-  height: auto; 
+  height: 10px; 
   background-color: #1a7e7e;
   width: 100%;
+  */
 }
 
 .div-container img {
@@ -1674,7 +1677,7 @@ article:hover .overlay a {
         align-items: flex-start;
         justify-content: flex-start;
         position: fixed;
-        top: 75px;
+        top: 79px;
         right: -300px;
         width: 300px;
         height: 100vh;
@@ -2062,7 +2065,7 @@ const TopDesignProfile =() => {
 return (
     <div>
         <div className="top-hearder-item top-design-profile">
-      <img src="images/my_img-removebg-preview.png" />
+      <img src="images/my_img-removebg-previe.png" />
       <p>Tech Architect</p></div>
     </div>
 )
@@ -2071,7 +2074,7 @@ return (
 const AboutMySelf =() => {
   return (
     <div>
-        <div className="intro-design-cover" style={{backgroundColor: "#ebebeb"}}>
+        <div className="intro-design-cover" style={{backgroundColor: "#0d879c2c"}}>
       <h1 style={{color: "#333"}}>ABOUT ME</h1>
       <p className="about-container" style={{textAlign: "left"}}>
         <ul>
@@ -2081,11 +2084,12 @@ const AboutMySelf =() => {
       <li><strong>Education: </strong> Bachelor's degree in Computer Science</li>
       <li><strong>Skills: </strong> Problem-solving, teamwork, communication</li>
     </ul>
-    <div class="about-image-cover" >
-      <div style={{width: "310px", height: "300px", border: "none"}}></div>
-      {/*
-        <img style={{width: "300px", height: "300px", border: "none"}} src=""/>
-      */}
+    <div class="about-image-cover" style={{width: "310px", height: "auto", border: "none", backgroundColor: "brown"}}>
+      {
+        <img 
+        style={{width: "300px", height: "100%", repeat: "true", border: "none", objectFit: "cover"}} 
+        src="images/profile/trevor.jpg"/>
+      }
         </div>
         </p>
 
