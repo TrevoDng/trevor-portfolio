@@ -168,13 +168,20 @@ html {
   margin-right: 5px;
 }
 
+#menu-button-action {
+  display: none;
+  padding: 0 20px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
 #mobile:hover {
   border: 1px solid #21adad;
   border-radius: 5px;
 }
 
-#mobile i {
-    color: white;
+#mobile i{
+   color: #000000;
 }
 
 .author-name {
@@ -271,13 +278,7 @@ html {
      color: #ffffffc7;
  }
 
- #mobile {
 
- }
-
- #mobile i{
-    color: #000000;
- }
 /*end top design*/
 
 /*top design 2*/
@@ -1723,6 +1724,15 @@ article:hover .overlay a {
     cursor: pointer; 
 }
 
+#menu-button-action {
+  display: block;
+}
+
+#menu-button-action i{
+    font-size: 24px;
+    cursor: pointer; 
+}
+
 .top-design {
   padding-top: 0;
   margin-top: 0;
@@ -1898,6 +1908,14 @@ renderSwitch(holder) {
     <ul id="navbar" 
     className={this.state.clicked ? 
       "#navbar active" : "#navbar"}>
+
+      <div id="menu-button-action" 
+  onClick=
+  {this.handleClick}>
+  <i className=
+    {this.state.clicked ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'}></i>
+  </div>
+
       <li>
         <a id="home-a-tag" href="#blog" className='active home-a-tag'>
           Blog
