@@ -162,6 +162,12 @@ html {
     display: none;
 }
 
+#mobile:hover {
+  border: 1px solid #21adad;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 #mobile i {
     color: white;
 }
@@ -169,6 +175,10 @@ html {
 .author-name {
     font-size: 12px;
     color: #0f4141;
+
+  border: 1px solid #21adad;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 
@@ -1161,7 +1171,7 @@ margin: 20px;
   justify-content: center;
 }
 
-article {
+.blog-article {
   background-color: #21adad;
   position: relative;
   background-image: url('images/blog/Screenshot from 2024-11-23 10-00-43.png');
@@ -1567,7 +1577,7 @@ article:hover .overlay a {
 */
 
 .about-image-cover {
-  background-image: linear-gradient(rgb(0, 20, 34), rgba(1, 20, 26, 0.144)), url('images/blog/Screenshot from 2024-11-23 10-00-43.png');
+  background-image: linear-gradient(rgb(0, 20, 34), rgba(1, 20, 26, 0.144)), url('images/profile/trevor.jpg');
   display: grid;
   place-items: center;
   height: auto; 
@@ -1756,6 +1766,28 @@ article {
   padding: 20px;
   vertical-align: top;
 }
+
+.blog-posts {
+  flex-direction: column;
+}
+
+.blog-article {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.speaking-engagements-list {
+  flex-direction: column;
+  
+}
+
+.engagement {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+}
+
 }
 
 @media screen and (min-width: 1340px) {
@@ -1924,7 +1956,7 @@ function TopDesign() {
         <div className="hero-section-content-container">
           <div className="hero-section-content hero-image-container">
             <div className="hexagon">
-            <img src="images/my_img-removebg-preview.png" alt="Your Name" className="hero-section-profile-image" />
+            <img src="images/profile/trevor.jpg" alt="Your Name" className="hero-section-profile-image" />
           </div>
             </div>
           <div className="hero-section-content hero-section-text-container">
@@ -2039,7 +2071,7 @@ return (
 const AboutMySelf =() => {
   return (
     <div>
-        <div className="intro-design-cover" style={{backgroundColor: "#21adad"}}>
+        <div className="intro-design-cover" style={{backgroundColor: "#ebebeb"}}>
       <h1 style={{color: "#333"}}>ABOUT ME</h1>
       <p className="about-container" style={{textAlign: "left"}}>
         <ul>
@@ -2049,9 +2081,12 @@ const AboutMySelf =() => {
       <li><strong>Education: </strong> Bachelor's degree in Computer Science</li>
       <li><strong>Skills: </strong> Problem-solving, teamwork, communication</li>
     </ul>
-    <div class="about-image-cover">
-        <img style={{width: "300px", height: "300px"}} src="images/profile/my_img-removebg-preview.png"/>
-    </div>
+    <div class="about-image-cover" >
+      <div style={{width: "310px", height: "300px", border: "none"}}></div>
+      {/*
+        <img style={{width: "300px", height: "300px", border: "none"}} src=""/>
+      */}
+        </div>
         </p>
 
         </div>
@@ -2533,7 +2568,7 @@ const projects = [
     languages: ['JavaScript', 'React', 'CSS'],
     purpose: 'A web application for task management',
     image: 'images/projects/Screenshot from 2024-11-20 20-24-17.png',
-    url: 'https://example.com/project1'
+    url: 'https://www.tenglobal.co.za'
   },
   {
     id: 4,
@@ -2830,7 +2865,7 @@ const Blog = () => {
       <h2 style={{color: "#177777"}}>Blog/News</h2>
       <div className="blog-posts">
         {blogData.map((blog, index) => (
-          <article key={index}>
+          <article className="blog-article" key={index}>
             <div className="overlay">
             <h3>{blog.title}</h3>
             <p>{blog.summary}</p>
@@ -3198,7 +3233,6 @@ const SkillsIntroduction =()=> {
 
               <OpenSourceContributions />
               <SpeakingEngagements />
-              <AutoText />
               <Contact />
         <section className="welcome-section" 
         style={{marginTop: "0px"}}>
