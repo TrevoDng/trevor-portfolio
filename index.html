@@ -658,7 +658,7 @@ margin: 20px;
     margin-bottom: 0;
 }
 
-.intro-design-cover p {
+.intro-design-cover div {
     font-size: 14px;
 }
 
@@ -1738,6 +1738,10 @@ article:hover .overlay a {
     margin-bottom: 0;
   }
 
+  .icons-decoration {
+    /*display: none;*/
+  }
+
   .about-container ul {
     width: 60%;
   }
@@ -2102,7 +2106,7 @@ const AboutMySelf =() => {
     <div>
         <div className="intro-design-cover" style={{backgroundColor: "#0d879c2c"}}>
       <h1 style={{color: "#333"}}>ABOUT ME</h1>
-      <p className="about-container" style={{textAlign: "left"}}>
+      <div className="about-container" style={{textAlign: "left"}}>
         <ul>
       <li><strong>Languages: </strong>JavaScript, Java, Kottlin, CSS</li>
       <li><strong>Technologies: </strong>React, React Native, Bootstrap, Nodejs, Spring Boot, MongoDB</li>
@@ -2116,7 +2120,7 @@ const AboutMySelf =() => {
         src="images/profile/trevor.jpg"/>
       }
         </div>
-        </p>
+        </div>
 
         </div>
     </div>
@@ -2259,6 +2263,10 @@ const closeAllElements = useCallback((id) => {
  function IconComponent() {
 
   const iconsRef = useRef(null);
+
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+
   const iconStyles = [
     { left: '50px', top: '100px', color: "#a1351a" },
     { left: '100px', top: '200px', color: "red" },
@@ -2272,17 +2280,31 @@ const closeAllElements = useCallback((id) => {
   ];
 
   useEffect(() => {
-    const icons = iconsRef.current.children;
-    Array.from(icons).forEach((icon, index) => {
-      icon.style.position = 'absolute';
-      icon.style.left = iconStyles[index].left;
-      icon.style.top = iconStyles[index].top;
-      icon.style.color = iconStyles[index].color;
+  const icons = iconsRef.current.children;
+  const adjustedIconStyles = adjustIconPositions(screenWidth, iconStyles);
+  Array.from(icons).forEach((icon, index) => {
+    icon.style.position = 'absolute';
+    icon.style.left = adjustedIconStyles[index].left;
+    icon.style.top = adjustedIconStyles[index].top;
+    icon.style.color = adjustedIconStyles[index].color;
 
-      const randomRotate = Math.random() * 360;
-      icon.style.transform = `rotate(${randomRotate}deg)`;
-    });
-  }, []);
+    const randomRotate = Math.random() * 360;
+    icon.style.transform = `rotate(${randomRotate}deg)`;
+  });
+}, []);
+
+  function adjustIconPositions(screenWidth, iconStyles) {
+  if (screenWidth < 768) {
+    iconStyles[2].left = '50px';
+    iconStyles[3].left = '60px';
+    iconStyles[5].left = '70px';
+    iconStyles[6].left = '80px';
+    iconStyles[8].left = '90px';
+  } else if (screenWidth < 1024) {
+    // Add logic for medium screens
+  }
+  return iconStyles;
+}
 
   return (
     <div ref={iconsRef} className="icons-decoration">
