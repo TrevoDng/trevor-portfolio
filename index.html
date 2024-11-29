@@ -1821,6 +1821,10 @@ article {
   padding: 20px;
 }
 
+.footer-container {
+  flex-direction: column;
+}
+
 }
 
 @media screen and (min-width: 1340px) {
@@ -3178,7 +3182,7 @@ const Footer = () => {
   return (
     <footer className="footer-section">
       <div className="footer-container">
-        <div className="footer-links">
+        <div className="footer-items footer-links">
           <h3>Quick Links</h3>
           <ul>
             <li><a href="https://trevodng.github.io/trevor-portfolio/">Home</a></li>
@@ -3187,7 +3191,7 @@ const Footer = () => {
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-        <div className="footer-social">
+        <div className="footer-items footer-social">
           <h3>Follow Me</h3>
           <ul>
             <li><a href="https://www.linkedin.com/in/trevor-elelwani-netshisaulu-537905115/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin" /></a></li>
@@ -3195,7 +3199,7 @@ const Footer = () => {
             <li><a href="https://x.com/travah1" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-twitter" /></a></li>
           </ul>
         </div>
-        <div className="footer-copyright">
+        <div className="footer-items footer-copyright">
           <p style={{fontSize: "10px"}}>&copy; 2024 T.E Netshisaulu. All rights reserved.</p>
         </div>
       </div>
