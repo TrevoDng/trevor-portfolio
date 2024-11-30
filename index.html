@@ -9,6 +9,9 @@
   <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
   integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
@@ -1835,6 +1838,10 @@ article {
   flex-direction: column;
 }
 
+.testimonials {
+  margin: 0 10px;
+}
+
 }
 
 @media screen and (min-width: 1340px) {
@@ -2569,7 +2576,8 @@ const LanguageGraph = () => {
 const Libraries =()=> {
 
 return (
-  <section className="intro-content-cover technology-cover" id="libraries-cover">
+  <section className="intro-content-cover technology-cover" 
+  id="libraries-cover">
     <div className="langauge-card" style={{boxShadow: "none"}}>
       <i></i>
       <p className="icon-container intro-img-container">
@@ -2821,7 +2829,7 @@ const nextSlide = () => {
 };
 
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
       <h2 style={{color: "#177777"}}>Testimonials</h2>
     <div className="slider-container">
 
@@ -2870,7 +2878,9 @@ const nextSlide = () => {
 //about me
 const Contact = () => {
   return (
-    <section id="contact" className="contact-section" 
+    <section id="contact" 
+    className="contact-section"
+    data-aos="fade-up" data-aos-duration="300" data-aos-delay="500" 
     style={{marginBottom: "0px", 
     padding: "0px",
     backgroundColor: ""}}>
@@ -2934,7 +2944,8 @@ const blogData = [
 
 const Blog = () => {
   return (
-    <section id="blog" className="blog-section">
+    <section id="blog" className="blog-section"
+    data-aos="fade-rigth" data-aos-duration="1000" data-aos-delay="500">
       <h2 style={{color: "#177777"}}>Blog/News</h2>
       <div className="blog-posts">
         {blogData.map((blog, index) => (
@@ -3075,7 +3086,9 @@ const OpenSourceContributions = () => {
 
 const SpeakingEngagements = () => {
   return (
-    <section id="speaking-engagements" className="speaking-engagements-section">
+    <section id="speaking-engagements" 
+    className="speaking-engagements-section"
+    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
       <h2 style={{color: "#177777", marginBottom: "10px"}}>Speaking Engagements</h2>
       <div className="speaking-engagements-list">
         <div className="engagement"
@@ -3111,7 +3124,9 @@ const SpeakingEngagements = () => {
 
 const AboutMe = () => {
   return (
-    <section id="about-me" className="about-me-section">
+    <section id="about-me" 
+    className="about-me-section"
+    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
       <div className="about-me-content">
 
       <h2 style={{color: "#177777"}}>About Me</h2>
@@ -3256,7 +3271,7 @@ const Footer = () => {
         {
           testimonailsData.map((testimonial, index) => {
             return (
-              <section key={index} className="section testimonials" id="testimonials">
+              <section key={index} className="section testimonials">
           <div className="home-icon">
             <i className="fa-solid fa-user"></i></div>
           <h2>{testimonial.name}</h2>
@@ -3279,24 +3294,30 @@ const SkillsIntroduction =()=> {
     return (
         <div>
 
-            <section className="language-section">
+            <section className="language-section" 
+            data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
       <h3 style={{color: "#21adad"}}>LANGAUES</h3>
       
         <LanguagesCard />
           
           </section>
 
-          <section>
+          <section data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
             <LanguageGraph />
             </section>
 
           <section>
             <h4 className="language-proficiency portfolio-headings">LIBRARIE PROFICIENCY</h4>
-          <Libraries />
+            <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+            <Libraries />
+            </div>
+            <div data-aos="fade-top" data-aos-duration="1000" data-aos-delay="500">
           <LibraryGraph />
+        </div>
             </section>
 
-            <section id="projects">
+            <section id="projects" 
+            data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
               <LatestProjects />
               </section>
 
@@ -3308,7 +3329,8 @@ const SkillsIntroduction =()=> {
               <SpeakingEngagements />
               <Contact />
         <section className="welcome-section" 
-        style={{marginTop: "0px"}}>
+        style={{marginTop: "0px"}}
+        data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
       <h3 style={{color: "#177777"}}>Building innovative solutions.</h3>
           <p className="welcome-section-p">
           This portfolio showcases my expertise in programming, highlighting <a style={{color: "#015c5c", 
@@ -3359,11 +3381,14 @@ const ConfirmFinalPage=()=> {
               </div>
             </div>
 
-            <div>
+            <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">
             <AboutMySelf />  
             </div>
 
-            <div className="portfolio-introduction" id="services" style={{padding: "10px 5px 100px 5px"}}>
+            <div className="portfolio-introduction" 
+            id="services" 
+            style={{padding: "10px 5px 100px 5px"}}
+            data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
               <h4 style={{margin: "30px 5px 40px 5px", color: "#177777" /*"#022046"*/}}>Digital Solutions</h4>
               <DigitalSolutions />  
             </div>
@@ -3423,5 +3448,10 @@ const root = createRoot(document.getElementById('root'));
 
 //___________________________________
 </script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   </body>
 </html>
