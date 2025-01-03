@@ -11,6 +11,8 @@
 
 
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://apis.google.com/js/api.js"></script>
+    <script src="script.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
@@ -37,6 +39,9 @@
     <link rel="stylesheet" type="text/css" charset="utf-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
   
     <link rel="stylesheet" href="/navbarStyles.css">
+
+    <script src="https://www.firebase.com/js/9.1.3/firebase.app.js"></script>
+  <script src="https://www.firebase.com/js/9.1.3/firebase.storage.js"></script>
 
     <!--
     <script src="https://unpkg.com/react@18.2.0/dist/react.min.js"></script>
@@ -580,6 +585,11 @@ end of dropdown text*/
 
 .view-project:hover {
   background-color: #1a8d8d;
+}
+
+.view-project a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .top-design-button-cover {
@@ -2039,9 +2049,11 @@ function TopDesign() {
             <hr style={{color: "#21adad"}}></hr>
           <div className="top-design-button-cover" style={{ textAlign: 'center'}}>
         <button className="btn btn-primary hover-translate view-project" style={{paddingRight: "25px", paddingLeft: "25px"}}>Hire Me</button>
-        <button className="btn btn-primary hover-translate view-project">Download cv</button>
+        <button className="btn btn-primary hover-translate view-project"
+        >Download cv</button>
         </div>
-          </div>
+          </div>ext-decoration: none;
+          color: inherit;
         </div>
       </section>
     </div>
@@ -2093,6 +2105,41 @@ useEffect(() => {
   };
 }, [index, charIndex, isDeleting, delay, typingTexts, speed]);
 
+//import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+
+  //import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
+
+/*
+  //download firebase file
+  const firebaseConfig = {
+    apiKey: "AIzaSyBL-04SFTTy2dc30N9tNBAaMDkFI4armKY",
+    authDomain: "courses-store-e649d.firebaseapp.com",
+    databaseURL: "https://courses-store-e649d-default-rtdb.firebaseio.com",
+    projectId: "courses-store-e649d",
+    storageBucket: "courses-store-e649d.appspot.com",
+    messagingSenderId: "778172066495",
+    appId: "1:778172066495:web:cf8cf992db2283737e340a",
+    measurementId: "G-03WXS5VESY"
+};
+
+
+  const app = firebase.initializeApp(firebaseConfig);
+  const storage = firebase.storage(app);
+
+    const downloadFile = async () => {
+    try {
+      const storageRef = storage.ref('mycv/CV_2024-09-07-075818.pdf');
+      const url = await storageRef.getDownloadURL();
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'CV_2024-09-07-075818.pdf';
+      a.click();
+    } catch (error) {
+          console.error(error);
+      }
+    };
+    */
+
     return (
         <div>
             <div className="top-hearder-item top-design">
@@ -2114,12 +2161,13 @@ useEffect(() => {
           <hr style={{color: "#21adad"}}></hr>
 
           <div className="top-design-button-cover" style={{ textAlign: 'center', paddingTop: '20px' }}>
-        <button className="btn btn-primary hover-translate view-project" style={{paddingRight: "25px", paddingLeft: "25px"}}>Hire Me</button>
-        <button className="btn btn-primary hover-translate view-project">Download cv</button>
+        <button className="btn btn-primary hover-translate view-project" style={{paddingRight: "25px", paddingLeft: "25px"}}>
+          <a href="mailto:trevor279@live.com">Hire Me</a></button>
+        <button className="btn btn-primary hover-translate view-project">
+          <a href="https://firebasestorage.googleapis.com/v0/b/courses-store-e649d.appspot.com/o/mycv%2FCV_2024-09-07-075818%20.pdf?alt=media&token=2fc6c4e2-5c34-44d3-aa2a-5f967dcc8dd1" 
+           download>Download CV</a></button>
       </div>
             </div>
-
-            
         </div>
     )
 }
