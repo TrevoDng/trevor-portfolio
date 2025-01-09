@@ -2163,9 +2163,15 @@ useEffect(() => {
           <div className="top-design-button-cover" style={{ textAlign: 'center', paddingTop: '20px' }}>
         <button className="btn btn-primary hover-translate view-project" style={{paddingRight: "25px", paddingLeft: "25px"}}>
           <a href="mailto:trevor279@live.com">Hire Me</a></button>
-        <button className="btn btn-primary hover-translate view-project">
-          <a href="https://firebasestorage.googleapis.com/v0/b/courses-store-e649d.appspot.com/o/mycv%2FCV_2025010315263947.pdf?alt=media&token=57839d94-bdfc-46a5-aa73-2d81302b2750" 
-           download>Download CV</a></button>
+        {
+          <button className="btn btn-primary hover-translate view-project">
+            <a href="https://firebasestorage.googleapis.com/v0/b/courses-store-e649d.appspot.com/o/mycv%2FCV_2025010315263947.pdf?alt=media&token=57839d94-bdfc-46a5-aa73-2d81302b2750" 
+         style={{paddingRight: "0px", paddingLeft: "0px"}}   
+        download>Download CV</a>
+          </button>
+          
+        }
+        
       </div>
             </div>
         </div>
@@ -2605,8 +2611,8 @@ const LanguagesCard=()=> {
   { name: 'JavaScript', level: 80 },
   { name: 'HTML/CSS', level: 90 },
   { name: 'React', level: 85 },
-  { name: 'Python', level: 60 },
-  { name: 'Java', level: 40 }
+  { name: 'Python', level: 40 },
+  { name: 'Java', level: 90 }
 ];
 
 const LanguageGraph = () => {
